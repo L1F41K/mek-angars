@@ -1,0 +1,357 @@
+/* --- СЕКЦИЯ АНГАРОВ (ДЕСКТОПНЫЕ СТИЛИ ИЗ ТВОЕГО КОДА) --- */
+.hangars {
+	padding: clamp(60px, 6vw, 120px) 0;
+	background-color: var(--white);
+}
+
+.hangars__top {
+	display: flex;
+	padding: 0 clamp(16px, 5vw, 80px);
+	justify-content: space-between;
+	margin-bottom: clamp(32px, 4vw, 60px);
+	align-items: start;
+}
+
+.hangars__label {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: clamp(16px, 1.2vw, 20px);
+	font-weight: 400;
+	color: var(--black);
+}
+
+.hangars__label .square {
+	width: 12px;
+	height: 12px;
+	background-color: var(--blue);
+}
+
+.hangars__header {
+	max-width: 680px;
+	color: var(--black);
+}
+
+.hangars__title {
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	font-size: clamp(32px, 3.5vw, 48px);
+	line-height: 1.2;
+}
+
+.hangars__header p {
+	font-size: clamp(18px, 2vw, 28px);
+	font-weight: 500;
+	margin-top: 20px;
+	line-height: 1.4;
+}
+
+.text-blue {
+	color: var(--blue);
+}
+
+/* Сетка на десктопе */
+.hangars__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: -1px;
+	margin-left: -1px;
+	padding: 0 clamp(16px, 5vw, 80px); /* Защищаем края */
+}
+
+.hangar-card {
+	position: relative;
+	height: 300px;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #e5e5e5;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-color: var(--white);
+	box-sizing: border-box;
+	overflow: hidden;
+	transition:
+		color 0.4s ease,
+		background-color 0.4s ease;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.hangar-card__title {
+	color: var(--black);
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 500;
+	letter-spacing: -0.05em;
+	transition: color 0.4s ease;
+	line-height: 1.2;
+}
+
+.hangar-card--first {
+	grid-column-start: 2;
+}
+
+.hangars__grid > .hangar-card:nth-child(3) {
+	padding-left: 80px;
+}
+
+/* Невидимый фон для ховера */
+.hangar-card__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+	opacity: 0;
+	transition:
+		opacity 0.4s ease,
+		transform 0.6s ease;
+	transform: scale(1.05);
+}
+
+.hangar-card__bg::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(
+		0,
+		0,
+		0,
+		0.55
+	); /* Затемнение фона, чтобы читался белый текст */
+}
+
+.hangar-card__content,
+.hangar-card__icon {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+.hangar-card__icon {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.hangar-card__icon svg {
+	transition:
+		transform 0.4s ease,
+		stroke 0.4s ease;
+}
+
+.hangar-card__icon svg path {
+	stroke: var(--blue);
+}
+
+.hangar-card__list {
+	margin-top: 20px;
+	list-style: none;
+	padding: 0;
+	opacity: 0;
+	transform: translateY(10px);
+	transition:
+		opacity 0.4s ease,
+		transform 0.4s ease;
+}
+
+.hangar-card__list li {
+	font-size: 14px;
+	line-height: 1.5;
+	margin-bottom: 8px;
+	position: relative;
+	padding-left: 16px;
+	color: var(--white);
+}
+
+/* Квадратные маркеры как на макете */
+.hangar-card__list li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 6px;
+	width: 6px;
+	height: 6px;
+	background-color: var(--white);
+}
+
+/* Десктопные Hover эффекты */
+@media (min-width: 991px) {
+	.hangar-card:hover {
+		color: var(--white);
+	}
+	.hangar-card:hover .hangar-card__title {
+		color: var(--white);
+	}
+	.hangar-card:hover .hangar-card__bg {
+		opacity: 1;
+		transform: scale(1);
+	}
+	.hangar-card:hover .hangar-card__list {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	.hangar-card:hover .hangar-card__icon svg {
+		transform: rotate(0deg);
+	}
+	.hangar-card:hover .hangar-card__icon svg path {
+		stroke: var(--white);
+	}
+}
+
+/* Ячейка с кнопкой по умолчанию на ПК */
+.hangar-card--button {
+	padding-bottom: 0;
+	padding-right: 0;
+	background-color: #f9f9f9;
+	justify-content: flex-end;
+	align-items: flex-end;
+	border: transparent;
+	cursor: default;
+	border-top-color: #e5e5e5;
+	border-left-color: #e5e5e5;
+	margin: 0;
+}
+
+/* --- МЕДИА-ЗАПРОС ДЛЯ МОБИЛОК (990px и меньше) --- */
+@media (max-width: 990px) {
+	.hangars {
+		padding: 48px 0;
+	}
+
+	.hangars__top {
+		flex-direction: column;
+		gap: 12px;
+		padding: 0 16px;
+		margin-bottom: 32px;
+	}
+
+	.hangars__label {
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.hangars__header p {
+		font-size: 16px;
+		margin-top: 12px;
+	}
+
+	/* Перестраиваем сетку в одну колонку */
+	.hangars__grid {
+		grid-template-columns: 1fr;
+		padding: 0 16px;
+		margin-left: 0;
+		margin-top: 0;
+	}
+
+	.hangar-card {
+		height: 240px; /* ВОЗВРАЩАЕМ ФИКСИРОВАННУЮ ВЫСОТУ. Карточка изначально большая и стабильная */
+		padding: 24px 16px;
+		margin-left: 0;
+		margin-top: -1px; /* Схлопываем границы */
+		justify-content: space-between;
+	}
+
+	/* Сбрасываем десктопные сдвиги первой и третьей ячейки */
+	.hangar-card--first {
+		grid-column-start: auto;
+	}
+
+	.hangars__grid > .hangar-card:nth-child(3) {
+		padding-left: 24px;
+	}
+
+	/* Контент (список) изначально просто прозрачный, место под него в фиксированной высоте уже есть */
+	.hangar-card__list {
+		opacity: 0;
+		transform: translateY(10px);
+		transition:
+			opacity 0.3s ease,
+			transform 0.3s ease;
+	}
+
+	/* На мобилке иконка-стрелка зафиксирована на своем месте */
+	.hangar-card__icon {
+		position: absolute;
+		right: 24px;
+		top: 24px;
+		width: auto;
+	}
+
+	/* СТИЛИ ДЛЯ АКТИВНОЙ КАРТОЧКИ (Включаются по нажатию) */
+	.hangar-card.is-active {
+		color: var(--white);
+	}
+
+	.hangar-card.is-active .hangar-card__title {
+		color: var(--white);
+		margin-bottom: 16px;
+		max-width: 80%;
+	}
+
+	.hangar-card.is-active .hangar-card__bg {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	/* По нажатию список просто становится видимым, карточка при этом НЕ меняет свой размер */
+	.hangar-card.is-active .hangar-card__list {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.hangar-card.is-active .hangar-card__icon svg path {
+		stroke: var(--white);
+	}
+
+	/* --- ТРАНСФОРМАЦИЯ ЯЧЕЙКИ С КНОПКОЙ --- */
+	.hangar-card--button {
+		grid-column: 1 / -1;
+		background-color: transparent;
+		border: none !important;
+		padding: 0;
+		margin-top: 24px;
+		height: auto;
+		min-height: auto;
+		display: block;
+	}
+
+	/* Стилизуем внутреннюю ссылку/кнопку под синюю плашку */
+	.hangar-card--button .btn_link,
+	.hangar-card--button a,
+	.hangar-card--button button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		padding: 18px 24px;
+		background-color: var(--blue);
+		color: var(--white);
+		font-size: 16px;
+		font-weight: 600;
+		text-decoration: none;
+		box-sizing: border-box;
+		transition: background-color 0.3s;
+	}
+
+	.hangar-card--button .btn_link:active,
+	.hangar-card--button a:active {
+		background-color: #2a2e8c;
+	}
+	.hangar-card__title {
+		max-width: 272px;
+	}
+	.hangar-card--button .hangar-card__icon {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.hangar-card__title {
+		font-size: 24px;
+	}
+}

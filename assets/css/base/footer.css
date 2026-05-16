@@ -1,0 +1,392 @@
+/* --- СЕКЦИЯ ФУТЕР --- */
+.footer {
+	background-color: var(--dark-blue);
+	color: #ffffff;
+	/* Боковые и верхние паддинги делаем резиновыми */
+	padding: clamp(50px, 5vw, 80px) clamp(24px, 4vw, 80px) 40px
+		clamp(24px, 4vw, 80px);
+}
+
+/* --- ВЕРХНЯЯ ЛИНИЯ --- */
+.footer__top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	gap: 30px; /* Защита от столкновения логотипа и соцсетей */
+}
+
+.footer__logo {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.footer__logo-main {
+	font-size: clamp(32px, 3vw, 42px); /* Резиновый размер логотипа */
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.footer__logo-sub {
+	font-size: 11px;
+	line-height: 1.3;
+	opacity: 0.6;
+	text-transform: uppercase;
+}
+
+.footer__socials {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.footer__socials-title {
+	font-size: 18px;
+	font-weight: 400;
+	opacity: 0.7;
+}
+
+.footer__socials-links {
+	display: flex;
+	gap: 12px;
+}
+
+/* Белые квадратные кнопки соцсетей */
+.footer__social-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	background-color: #ffffff;
+	color: #0c1833;
+	text-decoration: none;
+	transition:
+		opacity 0.3s ease,
+		transform 0.2s ease;
+}
+
+.footer__social-btn:hover {
+	transform: translateY(-2px);
+	opacity: 0.9;
+}
+
+/* --- СРЕДНЯЯ СЕТКА КОЛОНОК --- */
+.footer__middle {
+	display: grid;
+	position: relative;
+	grid-template-columns: 1.3fr 1fr 1fr;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
+}
+
+.footer__col {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	min-width: 0; /* Важнейший фикс: не дает контенту распирать грид-ячейку */
+}
+
+/* Вертикальные линии-разделения между колонками и резиновые паддинги */
+.footer__col--address {
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 48px clamp(20px, 3vw, 40px) 48px 0;
+}
+
+.footer__col--contacts {
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 48px clamp(20px, 3vw, 40px) 48px clamp(20px, 4vw, 60px);
+}
+
+.footer__col--menu {
+	padding: 48px 0 48px clamp(20px, 4vw, 60px);
+}
+
+/* Подписи над блоками */
+.footer__col-label {
+	font-size: clamp(15px, 1.1vw, 18px);
+	font-weight: 500;
+	color: var(--white);
+	opacity: 0.7;
+	margin-bottom: 24px;
+	text-transform: uppercase;
+}
+
+/* Контент адреса */
+.footer__address-text {
+	font-size: clamp(
+		20px,
+		1.8vw,
+		26px
+	); /* Текст адреса теперь не разорвет строку на ноутбуке */
+	font-weight: 400;
+	line-height: 1.3;
+	margin: 0 0 30px 0;
+}
+
+/* Белая кнопка карты */
+.footer__map-btn {
+	display: inline-flex;
+	align-items: center;
+	/* Вместо жестких 90px делаем зазор резиновым */
+	gap: clamp(30px, 5vw, 90px);
+	padding: 19px 24px;
+	border: 1px solid var(--white);
+	background-color: var(--white);
+	color: var(--blue);
+	font-size: 18px;
+	font-weight: 600;
+	text-decoration: none;
+	white-space: nowrap; /* Жестко запрещаем тексту сжиматься */
+	transition: all 0.3s ease;
+	margin-top: auto;
+	align-self: flex-start;
+}
+
+.footer__map-btn:hover {
+	background-color: transparent;
+	color: var(--white);
+}
+
+.footer__map-btn:hover svg path {
+	stroke: var(--white);
+}
+
+/* Ссылки внутри колонок */
+.footer__link {
+	font-size: clamp(16px, 1.2vw, 20px); /* Резиновый размер шрифта для ссылок */
+	color: rgba(255, 255, 255, 1);
+	text-decoration: none;
+	margin-bottom: 12px;
+	white-space: nowrap; /* Чтобы телефоны и email не переносились уродливо */
+	transition:
+		opacity 0.3s ease,
+		color 0.3s ease;
+}
+
+.footer__link:hover {
+	opacity: 0.8;
+}
+
+.footer__link--phone {
+	font-weight: 500;
+}
+
+.footer__workhours {
+	font-size: clamp(16px, 1.2vw, 20px);
+	color: rgba(255, 255, 255, 1);
+}
+
+/* Сетка для навигационного меню */
+.footer__nav {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 12px;
+}
+
+.footer__nav .footer__link {
+	margin-bottom: 0;
+}
+
+/* --- НИЖНЯЯ ЛИНИЯ --- */
+.footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 48px;
+	gap: 30px;
+}
+
+.footer__copy {
+	font-size: clamp(15px, 1vw, 18px);
+	color: var(--white);
+	opacity: 0.7;
+}
+
+.footer__legal-links {
+	display: flex;
+	gap: clamp(20px, 3vw, 40px);
+}
+
+.footer__legal-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--white);
+	text-decoration: none;
+	font-size: clamp(15px, 1vw, 18px);
+	letter-spacing: 0.01em;
+	transition: color 0.3s ease;
+}
+
+/* --- ОБНОВЛЕННАЯ АДАПТИВНОСТЬ ДЛЯ ФУТЕРА --- */
+
+@media (max-width: 1366px) {
+	.footer__col--contacts,
+	.footer__col--menu {
+		padding-left: 30px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.footer__middle {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 40px;
+	}
+
+	.footer__col--address {
+		grid-column: span 2;
+		border-right: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		padding-right: 0;
+		padding-bottom: 40px;
+	}
+
+	.footer__col--contacts {
+		padding-left: 0;
+		border-right: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.footer__col--menu {
+		padding-left: 40px;
+	}
+}
+
+/* --- ТОЧНЫЙ СБРОС ПОД МОБИЛЬНЫЙ МАКЕТ (990px и меньше) --- */
+@media (max-width: 990px) {
+	.footer {
+		/* Обнуляем гигантские десктопные уши, оставляем стандартные 16px */
+		padding: 48px 16px 40px 16px !important;
+		box-sizing: border-box;
+	}
+
+	/* --- ВЕРХНЯЯ ЧАСТЬ (Лого + Соцсети) --- */
+	.footer__top {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		padding-bottom: 32px;
+	}
+
+	.footer__logo {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+	}
+
+	.footer__logo-main {
+		font-size: 32px;
+	}
+
+	.footer__socials {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		width: 100%;
+	}
+
+	.footer__socials-title {
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	/* --- СРЕДНЯЯ ЧАСТЬ (Блоки контента) --- */
+	.footer__middle {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0;
+		border-bottom: none; /* Убираем общую нижнюю черту, линии будут между блоками */
+	}
+
+	.footer__col {
+		border-right: none !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		/* Создаем четкие горизонтальные границы между секциями, как на макете */
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+		padding-top: 32px !important;
+		padding-bottom: 32px !important;
+		width: 100%;
+	}
+
+	/* Тонкая настройка отступов для первого и последнего контентного блока */
+	.footer__col--address {
+		padding-top: 32px !important;
+	}
+	.footer__col--contacts {
+		border-bottom: none !important;
+		padding-bottom: 0 !important;
+	}
+	.footer__col--menu {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Линия перед копирайтом */
+	}
+
+	.footer__col-label {
+		font-size: 14px;
+		margin-bottom: 16px;
+		letter-spacing: 0.05em;
+	}
+
+	/* Блок адреса и кнопка карты */
+	.footer__address-text {
+		font-size: 20px;
+		line-height: 1.4;
+		margin-bottom: 24px;
+	}
+
+	.footer__map-btn {
+		width: 100%; /* Кнопка карты на всю ширину экрана */
+		justify-content: space-between; /* Текст слева, стрелка на правый край */
+		padding: 16px 20px;
+		font-size: 16px;
+		box-sizing: border-box;
+	}
+
+	/* Блок контактов и навигация */
+	.footer__link {
+		font-size: 16px;
+		margin-bottom: 16px;
+	}
+
+	.footer__workhours {
+		font-size: 16px;
+	}
+
+	.footer__nav {
+		gap: 16px; /* Чуть увеличиваем расстояние для кликабельности на смартфонах */
+	}
+
+	/* --- НИЖНЯЯ ЧАСТЬ (Копирайт и доки) --- */
+	.footer__bottom {
+		flex-direction: column; /* Стек: ссылки документов сверху, копирайт в самом низу */
+		align-items: flex-start;
+		padding-top: 32px;
+		gap: 24px;
+	}
+
+	.footer__legal-links {
+		flex-direction: column;
+		gap: 16px;
+		width: 100%;
+	}
+
+	.footer__legal-link {
+		font-size: 14px;
+		line-height: 1.4;
+		justify-content: space-between; /* Стрелочки документов прижимаем вправо */
+		width: 100%;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Легкое подчеркивание для мобильных ссылок */
+		padding-bottom: 8px;
+	}
+
+	.footer__copy {
+		font-size: 14px;
+		opacity: 0.5;
+		margin-top: 8px;
+	}
+}

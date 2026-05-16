@@ -1,0 +1,372 @@
+/* --- СЕКЦИЯ НАЧАЛО ПРОЕКТА --- */
+.project-start {
+	/* Резиновые паддинги секции */
+	padding: clamp(50px, 6vw, 100px) clamp(24px, 4vw, 80px);
+	background: linear-gradient(110.61deg, #e8f0ff 0%, #fafafa 69.51%);
+}
+
+/* Главный заголовок */
+.project-start__main-title {
+	color: var(--black);
+	margin: 0 0 clamp(30px, 4vw, 60px) 0;
+	font-size: clamp(32px, 3.5vw, 56px); /* Адаптируем большой заголовок */
+	line-height: 1.15;
+}
+
+.project-start__main-title span {
+	color: var(--blue);
+}
+
+/* Двухколоночный Grid */
+.project-start__grid {
+	display: grid;
+	/* На десктопе сохраняем пропорции, но добавляем minmd0 для защиты от распирания кнопкой */
+	grid-template-columns: 1.1fr 0.9fr;
+	border-top: 1px solid #11111126;
+}
+
+/* Общие маленькие заголовки */
+.project-start__subtitle {
+	font-size: clamp(24px, 2vw, 32px); /* Плавное уменьшение подзаголовков */
+	font-weight: 500;
+	color: var(--black);
+	letter-spacing: -0.03em;
+	margin: 0 0 clamp(20px, 2.5vw, 40px) 0;
+}
+
+/* --- ЛЕВАЯ КОЛОНКА (Шаги) --- */
+.project-start__left {
+	border-right: 1px solid #e0e0e0;
+	/* Паддинг справа делаем резиновым, чтобы контент не лип к линии */
+	padding: 40px clamp(20px, 3vw, 50px) 40px 0;
+	min-width: 0; /* Важнейший фикс, позволяющий ячейке сжиматься корректно */
+}
+
+.project-steps {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(16px, 2vw, 30px); /* Резиновый зазор между шагами */
+}
+
+.project-steps__item {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.project-steps__number {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--blue);
+}
+
+.project-steps__text {
+	/* Делаем текст шагов адаптивным. 24px — много для ноутбука в 3 колонки */
+	font-size: clamp(18px, 1.3vw, 24px);
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: var(--black);
+	margin: 0;
+}
+
+/* --- ПРАВАЯ КОЛОНКА (Форма) --- */
+.project-start__right {
+	/* Паддинг слева тоже делаем резиновым */
+	padding: 48px 0 48px clamp(20px, 3vw, 40px);
+	min-width: 0;
+}
+
+.project-form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.project-form__field {
+	position: relative;
+	width: 100%;
+}
+
+/* Инпуты и Селект */
+.project-form__input,
+.project-form__select {
+	width: 100%;
+	height: 56px;
+	background-color: #f0f2f5;
+	border: none;
+	padding: 0 24px;
+	font-size: 16px;
+	color: #1a1a1a;
+	box-sizing: border-box;
+	outline: none;
+	transition: background-color 0.3s ease;
+}
+
+.project-form__input:focus,
+.project-form__select:focus {
+	background-color: #e6e9ed;
+}
+
+.project-form__input::placeholder {
+	color: var(--black);
+	opacity: 0.7;
+}
+
+.project-form__select:invalid {
+	color: var(--black);
+	opacity: 0.7;
+}
+
+.project-form__select option {
+	color: #1a1a1a;
+	background-color: #ffffff;
+}
+
+.project-form__select {
+	appearance: none;
+	cursor: pointer;
+}
+
+.project-form__field--select::after {
+	content: '';
+	position: absolute;
+	right: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 10px;
+	height: 6px;
+	background: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23001A34' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+		no-repeat center;
+	pointer-events: none;
+}
+
+/* Нижняя часть формы (Чекбокс + Кнопка) */
+.project-form__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	margin-top: 14px;
+}
+
+/* Кастомный чекбокс */
+.project-form__checkbox-label {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.project-form__checkbox-real {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+
+.project-form__checkbox-custom {
+	width: 23px;
+	height: 23px;
+	border: 1px solid var(--blue);
+	background-color: transparent;
+	flex-shrink: 0;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.project-form__checkbox-real:checked + .project-form__checkbox-custom::after {
+	content: '';
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	background-color: var(--blue);
+	width: 13px;
+	height: 13px;
+}
+
+.project-form__checkbox-text {
+	font-size: 16px;
+	line-height: 1.3;
+	color: var(--black);
+	opacity: 0.7;
+}
+
+/* Кнопка отправки */
+.project-form__submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	/* Переводим огромный gap на адаптивный clamp: от 40px на ноутах до 160px на FullHD */
+	gap: clamp(40px, 8vw, 160px);
+
+	padding: 21px 24px;
+	background-color: var(--blue);
+	color: #ffffff;
+	border: 1px solid var(--blue);
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	white-space: nowrap; /* Чтобы текст внутри кнопки никогда не сминался */
+	flex-shrink: 0; /* Не даем форме сдавливать кнопку */
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.project-form__submit:hover {
+	background-color: transparent;
+	color: var(--blue);
+	border-color: var(--blue);
+}
+
+.project-form__submit svg {
+	flex-shrink: 0;
+}
+
+.project-form__submit:hover svg path {
+	stroke: var(--blue);
+}
+
+/* --- ОБНОВЛЕННАЯ АДАПТИВНОСТЬ ДЛЯ ФОРМЫ СТАРТА ПРОЕКТА --- */
+
+@media (max-width: 1366px) {
+	/* ПЕРЕЛОМНЫЙ МОМЕНТ ДЛЯ НОУТБУКОВ */
+	.project-steps {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.project-start__left {
+		padding-right: 30px;
+	}
+	.project-start__right {
+		padding-left: 30px;
+	}
+
+	/* Чекбокс и кнопка выстраиваются вертикально */
+	.project-form__footer {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	.project-form__submit {
+		width: 100%;
+		justify-content: space-between; /* Текст слева, стрелка справа */
+	}
+}
+
+/* --- ТОЧКА СБРОСА ПОД МОБИЛЬНЫЙ МАКЕТ (990px и меньше) --- */
+@media (max-width: 990px) {
+	.project-start {
+		/* Сбрасываем боковые clamp-отступы десктопа */
+		padding: 48px 16px !important;
+	}
+
+	.project-start__main-title {
+		font-size: clamp(28px, 4.8vw, 36px);
+		line-height: 1.2;
+		margin-bottom: 32px;
+	}
+
+	/* Перестраиваем общую сетку в одну колонку */
+	.project-start__grid {
+		grid-template-columns: 1fr;
+		border-top: 1px solid rgba(17, 17, 17, 0.15);
+	}
+
+	.project-start__subtitle {
+		font-size: 22px;
+		line-height: 1.3;
+		margin-bottom: 24px;
+	}
+
+	/* --- ШАГИ (ЛЕВАЯ ЧАСТЬ) --- */
+	.project-start__left {
+		border-right: none !important; /* Убираем вертикальный десктопный разделитель */
+		padding: 32px 0 !important; /* Обнуляем боковые паддинги */
+	}
+
+	/* Превращаем шаги в чистый вертикальный список, как на макете */
+	.project-steps {
+		grid-template-columns: 1fr !important;
+		gap: 0 !important; /* Гэп убираем, так как разделять будем линиями */
+	}
+
+	.project-steps__item {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding: 16px 0 !important;
+		border-bottom: 1px solid #e0e0e0; /* Горизонтальные линии между шагами */
+	}
+
+	/* Специфичные фиксы для крайних элементов списка */
+	.project-steps__item:first-child {
+		padding-top: 0 !important;
+	}
+
+	.project-steps__item:last-child {
+		border-bottom: none; /* У последнего шага убираем линию перед заголовком формы */
+		padding-bottom: 0 !important;
+	}
+
+	.project-steps__number {
+		font-size: 16px;
+	}
+
+	.project-steps__text {
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	/* --- ФОРМА (ПРАВАЯ ЧАСТЬ) --- */
+	.project-start__right {
+		padding: 32px 0 0 0 !important; /* Полное обнуление левого зазора */
+		border-top: 1px solid rgba(17, 17, 17, 0.15); /* Линия-отсечка перед формой */
+	}
+
+	.project-form {
+		gap: 12px; /* Чуть плотнее инпуты на мобилках */
+	}
+
+	.project-form__input,
+	.project-form__select {
+		height: 52px; /* Незначительно разгружаем высоту */
+		padding: 0 16px;
+		font-size: 15px;
+	}
+
+	/* Перестраиваем подвал формы */
+	.project-form__footer {
+		flex-direction: column !important;
+		align-items: stretch !important; /* Растягиваем элементы */
+		gap: 24px;
+		margin-top: 12px;
+	}
+
+	.project-form__checkbox-label {
+		align-items: flex-start; /* Чтобы при переносе текста чекбокс оставался сверху */
+	}
+
+	.project-form__checkbox-text {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+
+	/* Кнопка "Отправить" на всю ширину с иконкой на концах */
+	.project-form__submit {
+		width: 100% !important;
+		max-width: 100%;
+		align-self: stretch;
+		justify-content: space-between; /* Текст слева, стрелочка справа */
+		padding: 18px 24px;
+		font-size: 16px;
+		box-sizing: border-box;
+	}
+}

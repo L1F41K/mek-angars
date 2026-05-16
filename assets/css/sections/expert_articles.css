@@ -1,0 +1,248 @@
+/* --- СЕКЦИЯ ЭКСПЕРТНЫЕ СТАТЬИ --- */
+.expert-articles {
+	/* Паддинги секции плавно уменьшаются с 80px до 40px в зависимости от экрана */
+	padding: clamp(40px, 5vw, 80px) clamp(24px, 4vw, 80px);
+	background-color: var(--white);
+}
+
+/* Шапка секции */
+.expert-articles__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 40px;
+	margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.expert-articles__title {
+	color: var(--black);
+	max-width: 890px;
+	margin: 0;
+	/* Адаптивный размер заголовка */
+	font-size: clamp(32px, 3.2vw, 56px);
+	line-height: 1.15;
+}
+
+.expert-articles__title span {
+	display: block;
+	color: var(--blue); /* Фирменный синий */
+	margin-bottom: 8px;
+}
+
+.expert-articles__description {
+	color: var(--black);
+	max-width: 533px;
+	margin: 0;
+	font-size: clamp(16px, 1.2vw, 18px);
+	line-height: 1.4;
+}
+
+/* Сетка для 3-х карточек */
+.expert-articles__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+/* --- КАРТОЧКА --- */
+.expert-card {
+	position: relative;
+	height: 400px;
+	padding: clamp(
+		24px,
+		2.5vw,
+		32px
+	); /* Паддинги внутри карточки сжимаются на ноутбуках */
+	box-sizing: border-box;
+	overflow: hidden;
+
+	/* Флекс расталкивает дату вверх, а кнопки вниз */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* Картинка как задний фон */
+.expert-card__bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 1;
+	filter: brightness(0.5); /* Затемнение для читаемости белого текста */
+	transition: transform 0.4s ease;
+}
+
+.expert-card:hover .expert-card__bg {
+	transform: scale(1.04); /* Зум при наведении */
+}
+
+/* Поднимаем контент над картинкой-фоном */
+.expert-card__date-wrapper,
+.expert-card__buttons {
+	position: relative;
+	z-index: 2;
+}
+
+/* Блок с датой */
+.expert-card__date-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Квадратик 12x12px */
+.expert-card__square {
+	width: 12px;
+	height: 12px;
+	background-color: var(--light-blue);
+	flex-shrink: 0;
+}
+
+.expert-card__date {
+	font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	opacity: 0.9;
+}
+
+/* Контейнер для кнопок */
+.expert-card__buttons {
+	display: flex;
+	gap: 12px;
+	width: 100%;
+}
+
+/* Базовый стиль кнопок */
+.expert-card__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+
+	/* Паддинги кнопок плавно уменьшаются на ноутбуках, спасая их от распирания */
+	padding: clamp(14px, 1.2vw, 20px) clamp(16px, 1.5vw, 24px);
+	font-size: clamp(15px, 1vw, 18px);
+
+	font-weight: 500;
+	text-decoration: none;
+	box-sizing: border-box;
+	white-space: nowrap; /* Жесткий запрет на перенос текста */
+	flex: 1 1 auto; /* Кнопки делят ширину поровну */
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.expert-card__btn svg {
+	flex-shrink: 0;
+}
+
+.expert-card__btn svg path {
+	transition: stroke 0.4s ease;
+}
+
+/* Белая кнопка (Дзен) */
+.expert-card__btn--white {
+	border: 1px solid var(--white);
+	background-color: var(--white);
+	color: var(--blue);
+}
+
+.expert-card__btn--white:hover {
+	background-color: transparent;
+	color: var(--white);
+}
+
+.expert-card__btn--white:hover svg path {
+	stroke: var(--white);
+}
+
+/* Прозрачная кнопка с рамкой (ВК) */
+.expert-card__btn--outline {
+	background-color: transparent;
+	color: var(--white);
+	border: 1px solid var(--white);
+}
+
+.expert-card__btn--outline:hover {
+	background-color: var(--white);
+	color: var(--blue);
+}
+
+.expert-card__btn--outline:hover svg path {
+	stroke: var(--blue);
+}
+
+/* --- АДАПТИВНОСТЬ МЕДИА-ЗАПРОСЫ --- */
+
+@media (max-width: 1366px) {
+	/* Ноутбуки: карточки узкие, кнопки физически не помещаются в ряд. 
+     Перестраиваем их в аккуратную вертикальную колонку */
+	.expert-card__buttons {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.expert-card__btn {
+		width: 100%;
+		justify-content: space-between; /* Текст слева, стрелочка справа */
+	}
+
+	.expert-card {
+		height: 430px; /* Слегка увеличиваем высоту под два ряда кнопок */
+	}
+}
+
+@media (max-width: 992px) {
+	.expert-articles__header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+
+	/* На планшетах перестраиваем сетку на 2 карточки в ряд */
+	.expert-articles__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	/* Так как в двухколоночной сетке карточки СНОВА стали широкими,
+     мы можем вернуть кнопкам исходное горизонтальное положение */
+	.expert-card__buttons {
+		flex-direction: row;
+	}
+
+	.expert-card__btn {
+		justify-content: center;
+	}
+
+	.expert-card {
+		height: 380px;
+	}
+}
+
+@media (max-width: 768px) {
+	/* Мобильные: карточки выстраиваются в одну вертикальную линию */
+	.expert-articles__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Узкие экраны телефонов: окончательно складываем кнопки в колонку */
+	.expert-card__buttons {
+		gap: 8px;
+	}
+
+	.expert-card__btn {
+		justify-content: space-between;
+	}
+
+	.expert-card {
+		height: auto;
+		min-height: 360px;
+	}
+}

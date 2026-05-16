@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<title>MEK</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__logo">
+				<img src="assets/svg/logo.svg" alt="МЭК Логотип" />
+			</div>
+
+			<div class="header__content">
+				<div class="header__info">
+					<a href="tel:+789999999999" class="header__phone text_l"
+						>8 999 999 99 99</a
+					>
+					<span class="header__schedule">пн-пт: 9.00-18.00</span>
+				</div>
+
+				<button class="burger header__burger" aria-label="Menu">
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+				</button>
+			</div>
+		</header>
+		<main>
+			<section class="hero">
+				<video class="hero__video" autoplay muted loop playsinline>
+					<source src="assets/video/landing.mp4" type="video/mp4" />
+				</video>
+
+				<div class="hero__container">
+					<div class="hero__main">
+						<div class="hero__text">
+							<h1 class="hero__title">
+								Строим надежные промышленные объекты за 30 дней — с гарантией 10
+								лет!
+							</h1>
+							<p class="text_l hero__subtitle">
+								Ангары, бытовки, склады и металлоконструкции под ключ: быстро,
+								прочно, с учётом ваших задач
+							</p>
+							<button class="button hero__btn">
+								Получить расчет за 15 минут
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<path
+										d="M1 13L13 1M13 1H4M13 1V10"
+										stroke="white"
+										stroke-width="2"
+									/>
+								</svg>
+							</button>
+						</div>
+
+						<div class="hero__socials">
+							<a href="#" class="social-btn"
+								><svg
+									width="25"
+									height="25"
+									viewBox="0 0 25 25"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<g clip-path="url(#clip0_2015_693)">
+										<path
+											d="M12.1123 0.331473C4.90144 0.708263 0.141443 6.36357 0.442184 13.4949C0.573542 16.6164 1.82836 19.3023 2.12564 22.2648C2.20169 23.0322 1.98046 23.9794 2.86539 24.3147C3.95428 24.726 5.62391 24.0347 6.5365 23.4021C6.84762 23.1912 7.1449 22.9458 7.37305 22.6416C8.31675 23.2673 9.21206 23.8722 10.3355 24.1418C15.2822 25.3275 20.7024 22.6139 23.1118 18.2549C27.6402 10.0658 21.5182 -0.159391 12.1123 0.331473ZM9.31231 17.4218C8.92169 17.726 8.5449 18.1409 8.1128 18.3794C7.48712 18.7147 7.29354 18.3655 7.05848 17.8125C6.31873 16.053 6.22885 13.0559 6.66095 11.2134C7.24169 8.70728 9.18095 6.50184 11.8461 6.26678C14.5424 6.02826 17.0451 7.39715 18.1755 9.86876C20.6782 15.3685 14.2728 20.7991 9.31231 17.4253V17.4218Z"
+											fill="#FAFAFA"
+										/>
+									</g>
+									<defs>
+										<clipPath id="clip0_2015_693">
+											<rect width="24.8889" height="24.8889" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+							<a href="#" class="social-btn"
+								><svg
+									width="29"
+									height="29"
+									viewBox="0 0 29 29"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M26.0738 14.222C26.0738 20.7677 20.7677 26.0738 14.222 26.0738C7.67619 26.0738 2.37012 20.7677 2.37012 14.222C2.37012 7.67619 7.67619 2.37012 14.222 2.37012C20.7677 2.37012 26.0738 7.67619 26.0738 14.222ZM14.6463 11.1192C13.4943 11.5988 11.1907 12.5915 7.73545 14.0975C7.17367 14.3203 6.87975 14.5384 6.85367 14.7517C6.80864 15.112 7.26019 15.2543 7.8753 15.4474L8.13367 15.5304C8.73812 15.7272 9.55352 15.9571 9.97664 15.9666C10.3606 15.9745 10.7889 15.8164 11.2614 15.4925C14.4898 13.3117 16.1562 12.2099 16.2605 12.187C16.3352 12.1704 16.4371 12.1491 16.5058 12.2107C16.5757 12.2723 16.5686 12.3885 16.5615 12.4205C16.5165 12.6113 14.7435 14.2599 13.8261 15.112C13.5543 15.368 13.2845 15.626 13.0166 15.886C12.4549 16.4276 12.0329 16.8341 13.0403 17.4978C14.0608 18.171 15.0907 18.8418 16.0863 19.5517C16.5769 19.9026 17.0178 20.2155 17.563 20.1669C17.8794 20.1372 18.2066 19.8397 18.3725 18.9509C18.766 16.8531 19.5375 12.3043 19.7153 10.4294C19.7256 10.2738 19.7189 10.1177 19.6952 9.9636C19.6811 9.83961 19.6211 9.7254 19.5269 9.6436C19.3846 9.52745 19.1654 9.50375 19.0682 9.50493C18.6226 9.51323 17.9387 9.75026 14.6474 11.1192"
+										fill="#FAFAFA"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+					<div class="hero__features">
+						<!-- Карточки -->
+						<div class="feature-card">
+							<img
+								src="assets/svg/crown.svg"
+								alt=""
+								class="feature-card__icon"
+							/>
+							<hr class="feature-card__sep" />
+							<p class="feature-card__text body_text">
+								Собственное производство — контролируем качество на каждом этапе
+							</p>
+						</div>
+						<div class="feature-card">
+							<img
+								src="assets/svg/calendar.svg"
+								alt=""
+								class="feature-card__icon"
+							/>
+							<hr class="feature-card__sep" />
+							<p class="feature-card__text body_text">
+								Сроки от 30 дней: от проекта до сдачи объекта
+							</p>
+						</div>
+						<div class="feature-card">
+							<img
+								src="assets/svg/group.svg"
+								alt=""
+								class="feature-card__icon"
+							/>
+							<hr class="feature-card__sep" />
+							<p class="feature-card__text body_text">
+								Работаем по всей России: доставка и монтаж в любой регион
+							</p>
+						</div>
+						<div class="feature-card">
+							<img
+								src="assets/svg/security-time.svg"
+								alt=""
+								class="feature-card__icon"
+							/>
+							<hr class="feature-card__sep" />
+							<p class="feature-card__text body_text">
+								Гарантия 10 лет на конструкции и монтаж
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="advantages">
+				<div class="advantages__container">
+					<div class="advantages__info">
+						<h2 class="advantages__title">
+							Почему клиенты <br /><span class="text-blue">выбирают нас?</span>
+						</h2>
+
+						<div class="advantages__content slider-sync-content">
+							<div class="advantage-item active">
+								<span class="advantage-item__number">01</span>
+								<h5 class="advantage-item__title">Собственное производство</h5>
+								<p class="body_text advantage-item__description">
+									Полный цикл: проектирование, изготовление, монтаж <br />
+									Контроль качества на каждом этапе — никаких посредников
+								</p>
+							</div>
+							<div class="advantage-item">
+								<span class="advantage-item__number">02</span>
+								<h5 class="advantage-item__title">Собственные производства</h5>
+								<p class="body_text advantage-item__description">
+									Полный цикл: проектирование, изготовление, монтаж <br />
+									Контроль качества на каждом этапе — никаких посредников
+								</p>
+							</div>
+						</div>
+
+						<div class="advantages__controls">
+							<div class="slider-counter">
+								<span class="current">01</span><span class="divider">/</span
+								><span class="total">06</span>
+							</div>
+
+							<div class="slider-nav">
+								<button class="slider-btn js-mob-prev" aria-label="Назад">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+										<path
+											d="M10 3L5 8L10 13"
+											stroke="white"
+											stroke-width="2"
+											stroke-linecap="round"
+										/>
+									</svg>
+								</button>
+								<button class="slider-btn js-mob-next" aria-label="Вперед">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+										<path
+											d="M6 3L11 8L6 13"
+											stroke="white"
+											stroke-width="2"
+											stroke-linecap="round"
+										/>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="advantages__slider">
+						<div class="slider-counter">
+							<span class="current">01</span> <span class="divider">/</span>
+							<span class="total">06</span>
+						</div>
+
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="assets/img/slider-img.jpg" alt="Производство" />
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/slider-img.jpg" alt="Производство" />
+								</div>
+							</div>
+						</div>
+
+						<div class="slider-nav">
+							<button class="slider-btn prev">
+								<svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+									<path d="M7 13L1 7L7 1" stroke="#3B40A9" stroke-width="2" />
+								</svg>
+							</button>
+							<button class="slider-btn next">
+								<svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+									<path d="M1 13L7 7L1 1" stroke="#3B40A9" stroke-width="2" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="hangars">
+				<div class="hangars__top">
+					<div class="hangars__label">
+						<span class="square"></span>
+						АНГАРЫ
+					</div>
+					<div class="hangars__header">
+						<h2 class="hangars__title">
+							<span class="text-blue">Ангары под любые задачи:</span><br />
+							от складов до цехов
+						</h2>
+						<p class="body_text">
+							Строим быстровозводимые ангары из металлоконструкций для:
+						</p>
+					</div>
+				</div>
+
+				<div class="hangars__grid">
+					<!-- Карточка 1 (пропускаем первую ячейку и встаем во вторую) -->
+					<div class="hangar-card hangar-card--first hangar-card-blue">
+						<div
+							class="hangar-card__bg"
+							style="background-image: url('assets/img/var1.jpg')"
+						></div>
+						<div class="hangar-card__content">
+							<h5 class="hangar-card__title">
+								Складов и Логистических Комплексов
+							</h5>
+							<ul class="hangar-card__list">
+								<li>пролеты до 50 м без внутренних опор</li>
+								<li>устойчивость к ветровым и снеговым нагрузкам</li>
+								<li>возможность утепления и вентиляции</li>
+								<li>срок возведения — от 45 дней</li>
+							</ul>
+						</div>
+						<div class="hangar-card__icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M7 17L17 7M17 7H7M17 7V17"
+									stroke="currentColor"
+									stroke-width="2"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<!-- Карточка 2 -->
+					<div class="hangar-card">
+						<div
+							class="hangar-card__bg"
+							style="background-image: url('assets/img/var2.jpg')"
+						></div>
+						<div class="hangar-card__content">
+							<h5 class="hangar-card__title">Сельскохозяйственных Объектов</h5>
+							<ul class="hangar-card__list">
+								<li>пролеты до 50 м без внутренних опор</li>
+								<li>устойчивость к ветровым и снеговым нагрузкам</li>
+								<li>возможность утепления и вентиляции</li>
+								<li>срок возведения — от 45 дней</li>
+							</ul>
+						</div>
+						<div class="hangar-card__icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M7 17L17 7M17 7H7M17 7V17"
+									stroke="currentColor"
+									stroke-width="2"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<!-- Карточка 3 (перейдет на вторую строку сама) -->
+					<div class="hangar-card hangar-card-blue">
+						<div
+							class="hangar-card__bg"
+							style="background-image: url('assets/img/var3.jpg')"
+						></div>
+						<div class="hangar-card__content">
+							<h5 class="hangar-card__title">Производственных Цехов</h5>
+							<ul class="hangar-card__list">
+								<li>пролеты до 50 м без внутренних опор</li>
+								<li>устойчивость к ветровым и снеговым нагрузкам</li>
+								<li>возможность утепления и вентиляции</li>
+								<li>срок возведения — от 45 дней</li>
+							</ul>
+						</div>
+						<div class="hangar-card__icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M7 17L17 7M17 7H7M17 7V17"
+									stroke="currentColor"
+									stroke-width="2"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<!-- Карточка 4 -->
+					<div class="hangar-card">
+						<div
+							class="hangar-card__bg"
+							style="background-image: url('assets/img/var4.jpg')"
+						></div>
+						<div class="hangar-card__content">
+							<h5 class="hangar-card__title">Спортивных Сооружений</h5>
+							<ul class="hangar-card__list">
+								<li>пролеты до 50 м без внутренних опор</li>
+								<li>устойчивость к ветровым и снеговым нагрузкам</li>
+								<li>возможность утепления и вентиляции</li>
+								<li>срок возведения — от 45 дней</li>
+							</ul>
+						</div>
+						<div class="hangar-card__icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M7 17L17 7M17 7H7M17 7V17"
+									stroke="currentColor"
+									stroke-width="2"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<!-- Ячейка 6 с кнопкой -->
+					<div class="hangar-card hangar-card--button">
+						<button class="button btn2">
+							Рассчитать стоимость ангара
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+								<path
+									d="M1 13L13 1M13 1H4M13 1V10"
+									stroke="white"
+									stroke-width="2"
+								/>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+			<section class="projects">
+				<div class="projects__container">
+					<!-- ЛЕВАЯ ЧАСТЬ -->
+					<div class="projects__left">
+						<h2 class="projects__title">
+							Наши реализованные <span class="text-gray">проекты</span>
+						</h2>
+
+						<div class="projects__list">
+							<!-- Пункт 1 -->
+							<div class="project-item active" data-project="1">
+								<div class="project-item__name-wrapper">
+									<div class="project-item__number">01</div>
+									<div class="project-item__name">
+										Склад для логистической компании
+									</div>
+								</div>
+
+								<div class="project-item__icon">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+										<path
+											d="M5 15L15 5M15 5H5M15 5V15"
+											stroke="currentColor"
+											stroke-width="2"
+										/>
+									</svg>
+								</div>
+							</div>
+							<div class="project-item" data-project="2">
+								<div class="project-item__name-wrapper">
+									<div class="project-item__number">02</div>
+									<div class="project-item__name">
+										Склад для логистической компании
+									</div>
+								</div>
+
+								<div class="project-item__icon">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+										<path
+											d="M5 15L15 5M15 5H5M15 5V15"
+											stroke="currentColor"
+											stroke-width="2"
+										/>
+									</svg>
+								</div>
+							</div>
+							<div class="project-item" data-project="3">
+								<div class="project-item__name-wrapper">
+									<div class="project-item__number">03</div>
+									<div class="project-item__name">
+										Склад для логистической компании
+									</div>
+								</div>
+
+								<div class="project-item__icon">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+										<path
+											d="M5 15L15 5M15 5H5M15 5V15"
+											stroke="currentColor"
+											stroke-width="2"
+										/>
+									</svg>
+								</div>
+							</div>
+							<div class="project-item" data-project="4">
+								<div class="project-item__name-wrapper">
+									<div class="project-item__number">04</div>
+									<div class="project-item__name">
+										Склад для логистической компании
+									</div>
+								</div>
+
+								<div class="project-item__icon">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+										<path
+											d="M5 15L15 5M15 5H5M15 5V15"
+											stroke="currentColor"
+											stroke-width="2"
+										/>
+									</svg>
+								</div>
+							</div>
+							<!-- Пункты 2, 3, 4 аналогично -->
+						</div>
+
+						<button class="button projects__btn">
+							Смотреть все кейсы
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+								<path
+									d="M1 13L13 1M13 1H4M13 1V10"
+									stroke="currentColor"
+									stroke-width="2"
+								/>
+							</svg>
+						</button>
+					</div>
+
+					<!-- ПРАВАЯ ЧАСТЬ (Контентные экраны) -->
+					<div class="projects__right">
+						<!-- Экран проекта 1 (активен по умолчанию) -->
+						<div class="project-view active" id="project-1">
+							<div
+								class="project-view__bg"
+								style="background-image: url('assets/img/num1.jpg')"
+							></div>
+							<div class="project-view__number">01</div>
+							<div class="project-view__content">
+								<div class="project-view__city">
+									<span class="square"></span> МОСКВА
+								</div>
+								<h3 class="project-view__title">
+									Склад для логистической компании
+								</h3>
+								<div class="project-view__line"></div>
+								<div class="project-view__info">
+									<div class="info-item">
+										<span>Площадь</span>
+										<p>2 000 м</p>
+									</div>
+									<div class="info-item">
+										<span>Срок</span>
+										<p>50 дней</p>
+									</div>
+									<div class="info-item">
+										<span>Особенность</span>
+										<p>утепленный ангар с автоматизированной вентиляцией</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="project-view" id="project-2">
+							<div
+								class="project-view__bg"
+								style="background-image: url('assets/img/num2.jpg')"
+							></div>
+							<div class="project-view__number">02</div>
+							<div class="project-view__content">
+								<div class="project-view__city">
+									<span class="square"></span> МОСКВА
+								</div>
+								<h3 class="project-view__title">
+									Склад для логистической компании
+								</h3>
+								<div class="project-view__line"></div>
+								<div class="project-view__info">
+									<div class="info-item">
+										<span>Площадь</span>
+										<p>2 000 м</p>
+									</div>
+									<div class="info-item">
+										<span>Срок</span>
+										<p>50 дней</p>
+									</div>
+									<div class="info-item">
+										<span>Особенность</span>
+										<p>утепленный ангар с автоматизированной вентиляцией</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="project-view" id="project-3">
+							<div
+								class="project-view__bg"
+								style="background-image: url('assets/img/num3.jpg')"
+							></div>
+							<div class="project-view__number">03</div>
+							<div class="project-view__content">
+								<div class="project-view__city">
+									<span class="square"></span> МОСКВА
+								</div>
+								<h3 class="project-view__title">
+									Склад для логистической компании
+								</h3>
+								<div class="project-view__line"></div>
+								<div class="project-view__info">
+									<div class="info-item">
+										<span>Площадь</span>
+										<p>2 000 м</p>
+									</div>
+									<div class="info-item">
+										<span>Срок</span>
+										<p>50 дней</p>
+									</div>
+									<div class="info-item">
+										<span>Особенность</span>
+										<p>утепленный ангар с автоматизированной вентиляцией</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="project-view" id="project-4">
+							<div
+								class="project-view__bg"
+								style="background-image: url('assets/img/num4.jpg')"
+							></div>
+							<div class="project-view__number">04</div>
+							<div class="project-view__content">
+								<div class="project-view__city">
+									<span class="square"></span> МОСКВА
+								</div>
+								<h3 class="project-view__title">
+									Склад для логистической компании
+								</h3>
+								<div class="project-view__line"></div>
+								<div class="project-view__info">
+									<div class="info-item">
+										<span>Площадь</span>
+										<p>2 000 м</p>
+									</div>
+									<div class="info-item">
+										<span>Срок</span>
+										<p>50 дней</p>
+									</div>
+									<div class="info-item">
+										<span>Особенность</span>
+										<p>утепленный ангар с автоматизированной вентиляцией</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="about-stats">
+				<div class="container about-stats__container">
+					<div class="about-stats__main">
+						<div class="about-stats__content">
+							<h2 class="about-stats__title">
+								<span>15 лет строим будущее</span>
+								вместе с вами
+							</h2>
+							<p class="about-stats__description">
+								Мы — команда инженеров и строителей, которые верят, что
+								надёжность начинается с деталей
+							</p>
+						</div>
+
+						<div class="about-stats__image-wrapper">
+							<img
+								src="assets/img/hangar.png"
+								alt="Современный ангар"
+								class="about-stats__image"
+							/>
+						</div>
+					</div>
+
+					<div class="about-stats__grid">
+						<div class="about-stats__card">
+							<div class="about-stats__inner">
+								<span class="about-stats__number">500+</span>
+								<p class="about-stats__text">реализованных <br />проектов</p>
+							</div>
+						</div>
+
+						<div class="about-stats__card">
+							<div class="about-stats__inner">
+								<span class="about-stats__number">100+</span>
+								<p class="about-stats__text">постоянных клиентов</p>
+							</div>
+						</div>
+
+						<div class="about-stats__card">
+							<div class="about-stats__inner">
+								<span class="about-stats__number">20</span>
+								<p class="about-stats__text">
+									специалистов <br />
+									в штате
+								</p>
+							</div>
+						</div>
+
+						<div class="about-stats__card">
+							<div class="about-stats__inner">
+								<span class="about-stats__number">5 тыс. м²</span>
+								<p class="about-stats__text">
+									площадь собственного производства
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="expert-articles">
+				<div class="container">
+					<div class="expert-articles__header">
+						<h2 class="expert-articles__title">
+							<span>Экспертный взгляд:</span>
+							строительство и решения под ключ
+						</h2>
+						<p class="expert-articles__description text_l">
+							Делимся знаниями о производстве, монтаже и эксплуатации наших
+							конструкций — от бытовок до сложных промышленных объектов
+						</p>
+					</div>
+
+					<div class="expert-articles__grid">
+						<article class="expert-card">
+							<img
+								src="assets/img/var1.jpg"
+								alt="Интерьер ангара"
+								class="expert-card__bg"
+							/>
+
+							<div class="expert-card__date-wrapper">
+								<span class="expert-card__square"></span>
+								<time class="expert-card__date" datetime="2026-01-08"
+									>08/01/2026</time
+								>
+							</div>
+
+							<div class="expert-card__buttons">
+								<a href="#" class="expert-card__btn expert-card__btn--white">
+									Читать в Дзен
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4 16.5L16 4M4 4H16V16.5"
+											stroke="#1F4CAE"
+											stroke-width="2"
+										/>
+									</svg>
+								</a>
+								<a href="#" class="expert-card__btn expert-card__btn--outline">
+									Читать в ВК
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4 16.5L16 4M4 4H16V16.5"
+											stroke="#FAFAFA"
+											stroke-width="2"
+										/>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="expert-card">
+							<img
+								src="assets/img/var2.jpg"
+								alt="Спецтехника в ангаре"
+								class="expert-card__bg"
+							/>
+							<div class="expert-card__date-wrapper">
+								<span class="expert-card__square"></span>
+								<time class="expert-card__date" datetime="2026-01-08"
+									>08/01/2026</time
+								>
+							</div>
+							<div class="expert-card__buttons">
+								<a href="#" class="expert-card__btn expert-card__btn--white">
+									Читать в Дзен
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4 16.5L16 4M4 4H16V16.5"
+											stroke="#1F4CAE"
+											stroke-width="2"
+										/>
+									</svg>
+								</a>
+								<a href="#" class="expert-card__btn expert-card__btn--outline">
+									Читать в ВК
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4 16.5L16 4M4 4H16V16.5"
+											stroke="#FAFAFA"
+											stroke-width="2"
+										/>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="expert-card">
+							<img
+								src="assets/img/var3.jpg"
+								alt="Производственный цех"
+								class="expert-card__bg"
+							/>
+							<div class="expert-card__date-wrapper">
+								<span class="expert-card__square"></span>
+								<time class="expert-card__date" datetime="2026-01-08"
+									>08/01/2026</time
+								>
+							</div>
+							<div class="expert-card__buttons">
+								<a href="#" class="expert-card__btn expert-card__btn--white">
+									Читать в Дзен
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4 16.5L16 4M4 4H16V16.5"
+											stroke="#1F4CAE"
+											stroke-width="2"
+										/>
+									</svg>
+								</a>
+								<a href="#" class="expert-card__btn expert-card__btn--outline">
+									Читать в ВК
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4 16.5L16 4M4 4H16V16.5"
+											stroke="#FAFAFA"
+											stroke-width="2"
+										/>
+									</svg>
+								</a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="project-start">
+				<div class="container">
+					<h2 class="project-start__main-title">
+						Готовы начать <span>проект?</span>
+					</h2>
+
+					<div class="project-start__grid">
+						<div class="project-start__left">
+							<h3 class="project-start__subtitle">Оставьте заявку, и мы:</h3>
+
+							<div class="project-steps">
+								<div class="project-steps__item">
+									<span class="project-steps__number">01</span>
+									<p class="project-steps__text">
+										Бесплатно рассчитаем стоимость
+									</p>
+								</div>
+								<div class="project-steps__item">
+									<span class="project-steps__number">02</span>
+									<p class="project-steps__text">
+										Подготовим 3 варианта решения
+									</p>
+								</div>
+								<div class="project-steps__item">
+									<span class="project-steps__number">03</span>
+									<p class="project-steps__text">
+										Пришлем коммерческое предложение за 15 минут
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-start__right">
+							<h3 class="project-start__subtitle">Ваша заявка</h3>
+
+							<form action="#" class="project-form">
+								<div class="project-form__field">
+									<input
+										type="text"
+										name="name"
+										placeholder="Имя"
+										required
+										class="project-form__input"
+									/>
+								</div>
+
+								<div class="project-form__field">
+									<input
+										type="tel"
+										name="phone"
+										placeholder="Телефон"
+										required
+										class="project-form__input"
+									/>
+								</div>
+
+								<div class="project-form__field project-form__field--select">
+									<select
+										name="object-type"
+										required
+										class="project-form__select"
+									>
+										<option value="" disabled selected hidden>
+											Тип объекта
+										</option>
+										<option value="angar">Прямостенный ангар</option>
+										<option value="sklad">Логистический комплекс</option>
+										<option value="proizvodstvo">Производственный цех</option>
+									</select>
+								</div>
+
+								<div class="project-form__footer">
+									<label class="project-form__checkbox-label">
+										<input
+											type="checkbox"
+											name="agreement"
+											required
+											class="project-form__checkbox-real"
+										/>
+										<span class="project-form__checkbox-custom"></span>
+										<span class="project-form__checkbox-text"
+											>Даю согласие на обработку персональных данных</span
+										>
+									</label>
+
+									<button type="submit" class="project-form__submit">
+										Отправить
+										<svg
+											width="20"
+											height="21"
+											viewBox="0 0 20 21"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M4 16.5L16 4M4 4H16V16.5"
+												stroke="#FAFAFA"
+												stroke-width="2"
+											/>
+										</svg>
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__top">
+					<a href="/" class="footer__logo">
+						<img src="assets/svg/logo.svg" alt="" />
+					</a>
+
+					<div class="footer__socials">
+						<span class="footer__socials-title">НАШИ СОЦ.СЕТИ</span>
+						<div class="footer__socials-links">
+							<a href="#" class="footer__social-btn" aria-label="Вконтакте">
+								<svg
+									width="22"
+									height="22"
+									viewBox="0 0 22 22"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<g clip-path="url(#clip0_2022_1496)">
+										<path
+											d="M10.5986 0.290283C4.28913 0.619974 0.124129 5.56837 0.387277 11.8083C0.502216 14.5396 1.60018 16.8898 1.8603 19.4819C1.92685 20.1534 1.73326 20.9822 2.50759 21.2756C3.46036 21.6355 4.92129 21.0306 5.71981 20.4771C5.99203 20.2926 6.25215 20.0778 6.45178 19.8116C7.27752 20.3591 8.06092 20.8884 9.04394 21.1244C13.3723 22.1618 18.115 19.7874 20.2232 15.9733C24.1855 8.80781 18.8288 -0.139223 10.5986 0.290283ZM8.14863 15.2444C7.80684 15.5105 7.47715 15.8735 7.09907 16.0822C6.5516 16.3756 6.38222 16.0701 6.17654 15.5861C5.52925 14.0466 5.45061 11.4242 5.8287 9.81201C6.33684 7.61911 8.0337 5.68936 10.3657 5.48368C12.725 5.27497 14.9149 6.47275 15.9039 8.63541C18.0938 13.4477 12.4891 18.1995 8.14863 15.2474V15.2444Z"
+											fill="#1F4CAE"
+										/>
+									</g>
+									<defs>
+										<clipPath id="clip0_2022_1496">
+											<rect width="21.7778" height="21.7778" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+							<a href="#" class="footer__social-btn" aria-label="Telegram">
+								<svg
+									width="25"
+									height="25"
+									viewBox="0 0 25 25"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M22.8135 12.4436C22.8135 18.1712 18.1707 22.814 12.4431 22.814C6.71557 22.814 2.07275 18.1712 2.07275 12.4436C2.07275 6.71606 6.71557 2.07324 12.4431 2.07324C18.1707 2.07324 22.8135 6.71606 22.8135 12.4436ZM12.8144 9.72865C11.8064 10.1483 9.79073 11.017 6.76742 12.3347C6.27587 12.5297 6.01868 12.7205 5.99586 12.9072C5.95646 13.2224 6.35157 13.3469 6.88979 13.5159L7.11586 13.5885C7.64475 13.7606 8.35824 13.9618 8.72846 13.9701C9.06446 13.977 9.43917 13.8388 9.85261 13.5553C12.6775 11.6472 14.1356 10.6831 14.2268 10.663C14.2922 10.6485 14.3813 10.6298 14.4415 10.6838C14.5027 10.7377 14.4965 10.8393 14.4902 10.8673C14.4508 11.0343 12.8994 12.4768 12.0968 13.2224C11.8589 13.4464 11.6228 13.6722 11.3885 13.8996C10.8969 14.3735 10.5277 14.7292 11.4092 15.31C12.3021 15.899 13.2033 16.486 14.0744 17.1072C14.5037 17.4141 14.8895 17.6879 15.3665 17.6454C15.6434 17.6195 15.9296 17.3592 16.0748 16.5814C16.4191 14.7458 17.0942 10.7657 17.2498 9.12509C17.2588 8.98901 17.2529 8.85234 17.2322 8.71754C17.2199 8.60905 17.1673 8.50912 17.0849 8.43754C16.9605 8.33591 16.7686 8.31517 16.6836 8.31621C16.2936 8.32346 15.6953 8.53087 12.8154 9.72865"
+										fill="#1F4CAE"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer__middle">
+					<div class="footer__col footer__col--address">
+						<span class="footer__col-label">АДРЕС</span>
+						<p class="footer__address-text">г. Москва, ул. Промышленная, 15</p>
+						<a href="#" class="footer__map-btn">
+							Смотреть на карте
+							<svg
+								width="20"
+								height="21"
+								viewBox="0 0 20 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M4 16.5L16 4M4 4H16V16.5"
+									stroke="#1F4CAE"
+									stroke-width="2"
+								/>
+							</svg>
+						</a>
+					</div>
+
+					<div class="footer__col footer__col--contacts">
+						<span class="footer__col-label">КОНТАКТЫ</span>
+						<a href="tel:89999999999" class="footer__link footer__link--phone"
+							>8 999 999 99 99</a
+						>
+						<a href="mailto:el-pochta@yandex.ru" class="footer__link"
+							>el-pochta@yandex.ru</a
+						>
+						<span class="footer__workhours">Пн-пт: 9.00 - 18.00</span>
+					</div>
+
+					<div class="footer__col footer__col--menu">
+						<span class="footer__col-label">МЕНЮ</span>
+						<nav class="footer__nav">
+							<a href="#" class="footer__link">Преимущества</a>
+							<a href="#" class="footer__link">Продукция</a>
+							<a href="#" class="footer__link">Кейсы</a>
+							<a href="#" class="footer__link">О нас</a>
+							<a href="#" class="footer__link">Блог</a>
+							<a href="#" class="footer__link">Контакты</a>
+						</nav>
+					</div>
+				</div>
+
+				<div class="footer__bottom">
+					<span class="footer__copy">МЭК 2026 (С) все права защищены</span>
+
+					<div class="footer__legal-links">
+						<a href="#" class="footer__legal-link">
+							ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+							<svg
+								width="20"
+								height="21"
+								viewBox="0 0 20 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M4 16.5L16 4M4 4H16V16.5"
+									stroke="#FAFAFA"
+									stroke-width="2"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="footer__legal-link">
+							ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ
+							<svg
+								width="20"
+								height="21"
+								viewBox="0 0 20 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M4 16.5L16 4M4 4H16V16.5"
+									stroke="#FAFAFA"
+									stroke-width="2"
+								/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="menu-overlay" id="burgerMenu">
+			<div class="menu-overlay__container">
+				<div class="menu-overlay__header">
+					<a href="#" class="menu-overlay__btn">
+						Оформить заявку
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M4 16.5L16 4M4 4H16V16.5"
+								stroke="#1F4CAE"
+								stroke-width="2"
+							/>
+						</svg>
+					</a>
+
+					<button
+						class="menu-overlay__close"
+						id="menuClose"
+						aria-label="Закрыть меню"
+					>
+						<svg
+							width="28"
+							height="28"
+							viewBox="0 0 28 28"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M7.31484 21.7139L5.71484 20.1139L12.1148 13.7139L5.71484 7.31387L7.31484 5.71387L13.7148 12.1139L20.1148 5.71387L21.7148 7.31387L15.3148 13.7139L21.7148 20.1139L20.1148 21.7139L13.7148 15.3139L7.31484 21.7139Z"
+								fill="#FAFAFA"
+							/>
+						</svg>
+					</button>
+				</div>
+
+				<nav class="menu-overlay__nav">
+					<div class="menu-overlay__item">
+						<a href="#" class="menu-overlay__link">Преимущества</a>
+					</div>
+
+					<div class="menu-overlay__item menu-overlay__item--dropdown">
+						<div class="menu-overlay__link-wrapper">
+							<a href="#" class="menu-overlay__link prod">Продукция</a>
+							<svg
+								width="40"
+								height="40"
+								viewBox="0 0 40 40"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M7.80469 32.1949L31.2193 7.80469M7.80469 7.80469H31.2193V32.1949"
+									stroke="#FAFAFA"
+									stroke-width="3"
+								/>
+							</svg>
+						</div>
+
+						<div class="menu-overlay__submenu">
+							<a href="#" class="menu-overlay__sublink">Ангары</a>
+							<a href="#" class="menu-overlay__sublink">Бытовки</a>
+							<a href="#" class="menu-overlay__sublink">Вентиляция</a>
+							<a href="#" class="menu-overlay__sublink">Металлоконструкции</a>
+						</div>
+					</div>
+
+					<div class="menu-overlay__item">
+						<a href="#" class="menu-overlay__link">Кейсы</a>
+					</div>
+					<div class="menu-overlay__item">
+						<a href="#" class="menu-overlay__link">О нас</a>
+					</div>
+					<div class="menu-overlay__item">
+						<a href="#" class="menu-overlay__link">Блог</a>
+					</div>
+					<div class="menu-overlay__item">
+						<a href="#" class="menu-overlay__link">Контакты</a>
+					</div>
+				</nav>
+
+				<div class="menu-overlay__footer">
+					<div class="menu-overlay__contacts">
+						<a href="tel:89999999999" class="menu-overlay__phone"
+							>8 999 999 99 99</a
+						>
+						<a href="mailto:el-pochta@yandex.ru" class="menu-overlay__email"
+							>el-pochta@yandex.ru</a
+						>
+					</div>
+
+					<div class="menu-overlay__socials">
+						<a href="#" class="menu-overlay__social-btn" aria-label="Вконтакте">
+							<svg
+								width="25"
+								height="25"
+								viewBox="0 0 25 25"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g clip-path="url(#clip0_2042_599)">
+									<path
+										d="M12.1123 0.331473C4.90144 0.708263 0.141443 6.36357 0.442184 13.4949C0.573542 16.6164 1.82836 19.3023 2.12564 22.2648C2.20169 23.0322 1.98046 23.9794 2.86539 24.3147C3.95428 24.726 5.62391 24.0347 6.5365 23.4021C6.84762 23.1912 7.1449 22.9458 7.37305 22.6416C8.31675 23.2673 9.21206 23.8722 10.3355 24.1418C15.2822 25.3275 20.7024 22.6139 23.1118 18.2549C27.6402 10.0658 21.5182 -0.159391 12.1123 0.331473ZM9.31231 17.4218C8.92169 17.726 8.5449 18.1409 8.1128 18.3794C7.48712 18.7147 7.29354 18.3655 7.05848 17.8125C6.31873 16.053 6.22885 13.0559 6.66095 11.2134C7.24169 8.70728 9.18095 6.50184 11.8461 6.26678C14.5424 6.02826 17.0451 7.39715 18.1755 9.86876C20.6782 15.3685 14.2728 20.7991 9.31231 17.4253V17.4218Z"
+										fill="#1F4CAE"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0_2042_599">
+										<rect width="24.8889" height="24.8889" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+						</a>
+						<a href="#" class="menu-overlay__social-btn" aria-label="Telegram">
+							<svg
+								width="29"
+								height="29"
+								viewBox="0 0 29 29"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M26.0738 14.222C26.0738 20.7677 20.7677 26.0738 14.222 26.0738C7.67619 26.0738 2.37012 20.7677 2.37012 14.222C2.37012 7.67619 7.67619 2.37012 14.222 2.37012C20.7677 2.37012 26.0738 7.67619 26.0738 14.222ZM14.6463 11.1192C13.4943 11.5988 11.1907 12.5915 7.73545 14.0975C7.17367 14.3203 6.87975 14.5384 6.85367 14.7517C6.80864 15.112 7.26019 15.2543 7.8753 15.4474L8.13367 15.5304C8.73812 15.7272 9.55352 15.9571 9.97664 15.9666C10.3606 15.9745 10.7889 15.8164 11.2614 15.4925C14.4898 13.3117 16.1562 12.2099 16.2605 12.187C16.3352 12.1704 16.4371 12.1491 16.5058 12.2107C16.5757 12.2723 16.5686 12.3885 16.5615 12.4205C16.5165 12.6113 14.7435 14.2599 13.8261 15.112C13.5543 15.368 13.2845 15.626 13.0166 15.886C12.4549 16.4276 12.0329 16.8341 13.0403 17.4978C14.0608 18.171 15.0907 18.8418 16.0863 19.5517C16.5769 19.9026 17.0178 20.2155 17.563 20.1669C17.8794 20.1372 18.2066 19.8397 18.3725 18.9509C18.766 16.8531 19.5375 12.3043 19.7153 10.4294C19.7256 10.2738 19.7189 10.1177 19.6952 9.9636C19.6811 9.83961 19.6211 9.7254 19.5269 9.6436C19.3846 9.52745 19.1654 9.50375 19.0682 9.50493C18.6226 9.51323 17.9387 9.75026 14.6474 11.1192"
+									fill="#1F4CAE"
+								/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

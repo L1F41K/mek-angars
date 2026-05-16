@@ -1,0 +1,272 @@
+.about-stats .container {
+	/* Твои оригинальные паддинги */
+	padding: 140px 0 100px 80px;
+}
+
+/* Секция */
+.about-stats {
+	background: linear-gradient(163.46deg, #e8f0ff 11.45%, #fafafa 66.21%);
+	overflow: hidden;
+}
+
+/* Верхний блок — возвращаем на Flexbox, чтобы контролировать размеры */
+.about-stats__main {
+	display: flex;
+	align-items: flex-start; /* Прижимаем контент и ангар к низу */
+	justify-content: space-between;
+	margin-bottom: 60px;
+	position: relative;
+}
+
+/* Контент слева */
+.about-stats__content {
+	flex: 0 0 580px; /* Жестко фиксируем ширину текста, чтобы он не прыгал */
+	position: relative;
+	z-index: 2; /* Текст будет гарантированно НАД картинкой */
+	margin-bottom: 40px; /* Приподнимаем текст от низа, пока картинка стоит на полу */
+}
+
+.about-stats__title {
+	color: var(--black);
+	margin-bottom: 40px;
+	letter-spacing: -0.03em;
+}
+
+.about-stats__title span {
+	display: block;
+	color: var(--blue);
+}
+
+.about-stats__description {
+	color: var(--black);
+	font-size: 24px;
+}
+
+/* Обёртка для картинки */
+.about-stats__image-wrapper {
+	flex: 1 1 auto;
+	margin-left: -120px; /* Отрицательный маргин заставляет картинку заезжать ПОД текст */
+	position: relative;
+	z-index: 1; /* Картинка уходит под текст */
+	display: flex;
+	justify-content: flex-end;
+}
+
+.about-stats__image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Градиент поверх картинки */
+.about-stats__image-wrapper::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/* 1-й градиент: размывает левую сторону картинки снизу вверх по диагонали (как раз там, где текст)
+     2-й градиент: мягко размывает весь нижний край в цвет фона #fafafa */
+	background:
+		linear-gradient(45deg, #fafafa 10%, rgba(250, 250, 250, 0) 25%),
+		linear-gradient(to top, #fafafa 0%, rgba(250, 250, 250, 0) 15%);
+	pointer-events: none;
+}
+.about-stats__grid {
+	display: grid;
+
+	/* Вместо max-content делим экран на 4 равные гибкие части */
+	grid-template-columns: repeat(4, 1fr);
+
+	/* Убираем сумасшедший column-gap, расстояние сформируют паддинги */
+	column-gap: 0;
+
+	/* Делаем отступы контейнера резиновыми */
+	padding-right: clamp(24px, 5vw, 80px);
+
+	position: relative;
+	z-index: 3;
+}
+
+.about-stats__card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	/* Делаем боковые отступы резиновыми (на FullHD — 60px, на ноутах — уменьшатся до 30px) */
+	padding-right: clamp(30px, 4vw, 60px);
+	padding-left: clamp(20px, 3vw, 40px);
+
+	border-right: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+.about-stats__card:first-child {
+	padding-left: 0;
+}
+
+/* Последняя карточка */
+.about-stats__card:last-child {
+	padding-right: 0;
+	border-right: none;
+}
+
+.about-stats__number {
+	display: inline-flex;
+	/* Адаптируем гигантские цифры 80px */
+	font-size: clamp(48px, 4.5vw, 80px);
+	font-weight: 600;
+	color: rgba(0, 26, 52, 1);
+	line-height: 1;
+	letter-spacing: -0.05em;
+	margin-bottom: 20px;
+}
+
+.about-stats__text {
+	/* Адаптируем текст карточек */
+	font-size: clamp(16px, 1.2vw, 20px);
+	line-height: 1.3;
+	color: #001a34cc;
+	margin: 0;
+	width: 100%;
+}
+/* --- ДОБАВЛЯЕМ ТОЧКУ ДЛЯ НОУТБУКОВ (ПЕРЕЛОМНЫЙ МОМЕНТ) --- */
+@media (max-width: 1366px) {
+	/* Если на мелких ноутах карточки все равно жмутся, 
+     аккуратно схлопываем их в сетку 2х2 чуть раньше, чем планшетный 992px */
+	.about-stats__grid {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 40px;
+	}
+
+	.about-stats__card {
+		padding: 0 40px !important; /* Упрощаем паддинги для сетки 2х2 */
+	}
+
+	/* Левые колонки в сетке 2х2 */
+	.about-stats__card:nth-child(2n + 1) {
+		padding-left: 0 !important;
+		border-right: 1px solid #e0e0e0;
+	}
+
+	/* Правые колонки в сетке 2х2 */
+	.about-stats__card:nth-child(2n) {
+		padding-right: 0 !important;
+		border-right: none; /* Убираем правый бордер */
+	}
+}
+
+/* --- МЕДИА-ЗАПРОС ДЛЯ СЕКЦИИ О КОМПАНИИ (990px и меньше) --- */
+/* --- МЕДИА-ЗАПРОС ДЛЯ СЕКЦИИ О КОМПАНИИ (990px и меньше) --- */
+@media (max-width: 990px) {
+	.about-stats .container {
+		padding: 48px 16px;
+		box-sizing: border-box;
+	}
+
+	.about-stats__main {
+		flex-direction: column;
+		align-items: stretch;
+		margin-bottom: 40px;
+	}
+
+	.about-stats__content {
+		flex: none;
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 24px;
+	}
+
+	.about-stats__title {
+		font-size: clamp(28px, 4.5vw, 36px);
+		line-height: 1.2;
+		margin-bottom: 16px;
+	}
+
+	.about-stats__title span {
+		display: inline;
+	}
+
+	.about-stats__description {
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.about-stats__image-wrapper {
+		width: 100%;
+		margin-left: 0;
+		justify-content: center;
+		position: relative;
+	}
+
+	.about-stats__image {
+		width: 100%;
+		height: auto;
+	}
+
+	.about-stats__image-wrapper::after {
+		display: none;
+	}
+
+	/* ЧИСТАЯ СЕТКА БЕЗ СЛИПАНИЯ ЛИНЕЙ */
+	.about-stats__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 0;
+		row-gap: 0; /* Убираем грид-гэпы, чтобы линии примыкали друг к другу */
+		padding-right: 0;
+		width: 100%;
+	}
+
+	.about-stats__card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		box-sizing: border-box;
+
+		/* Сбрасываем все десктопные бордеры */
+		border: none !important;
+
+		/* Делаем одинаковые контролируемые паддинги сверху и снизу для всех ячеек */
+		padding-top: 24px !important;
+		padding-bottom: 24px !important;
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+
+	/* --- ВЕРТИКАЛЬНАЯ ЛИНИЯ (Разделяет левые и правые колонки) --- */
+	.about-stats__card:nth-child(2n + 1) {
+		padding-left: 0 !important; /* Левые карточки прижимаем к левому краю */
+		border-right: 1px solid #e0e0e0 !important; /* Рисуем правую линию для 1 и 3 карточки */
+	}
+
+	.about-stats__card:nth-child(2n) {
+		padding-right: 0 !important; /* Правые карточки прижимаем к правому краю */
+	}
+
+	/* --- ГОРИЗОНТАЛЬНАЯ ЛИНИЯ (Разделяет верх и низ) --- */
+	/* Ограничиваем бордер только нижней гранью первой линии карточек */
+	.about-stats__card:nth-child(1),
+	.about-stats__card:nth-child(2) {
+		border-bottom: 1px solid #e0e0e0 !important;
+		padding-top: 0 !important; /* Убираем верхний паддинг у самой первой строчки */
+	}
+
+	/* Корректируем паддинги для нижней линии карточек, чтобы они не двоились */
+	.about-stats__card:nth-child(3),
+	.about-stats__card:nth-child(4) {
+		padding-bottom: 0 !important; /* Убираем нижний паддинг у самой последней строчки */
+	}
+
+	.about-stats__number {
+		font-size: 40px;
+		margin-bottom: 8px;
+		letter-spacing: -0.02em;
+	}
+
+	.about-stats__text {
+		font-size: 14px;
+		line-height: 1.3;
+		color: #001a34cc;
+	}
+}
