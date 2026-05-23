@@ -1,0 +1,153 @@
+.advantages-section {
+	position: relative;
+	padding: 185px 80px;
+	padding-bottom: 263px;
+	overflow: hidden;
+}
+
+/* Контейнер для фоновой картинки */
+.advantages-bg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.advantages-bg img {
+	width: 100%;
+	height: auto;
+	display: block;
+	opacity: 0.7;
+}
+
+/* Сетка для карточек */
+.advantages-grid {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+/* --- ТИП 1 (По умолчанию) --- */
+.advantage-card {
+	background: linear-gradient(282.95deg, #e8f0ff 0%, #fafafa 100%), #ffffff;
+	backdrop-filter: blur(10px);
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	transition: transform 0.3s ease;
+}
+
+/* --- ТИП 2 (Модификатор) --- */
+.advantage-card--type-2 {
+	background: linear-gradient(282.95deg, #e8f0ff 0%, #fafafa 100%);
+}
+
+/* Позиционирование по координатам Grid на десктопе */
+.card-1 {
+	grid-column: 1;
+	grid-row: 1;
+}
+.card-2 {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.card-3 {
+	grid-column: 2;
+	grid-row: 2;
+	transform: translateX(-30px);
+}
+.card-4 {
+	grid-column: 3;
+	grid-row: 2;
+	transform: translateX(-30px);
+}
+
+/* Стилизация контента */
+.card-icon {
+	width: 40px;
+	height: 40px;
+	color: #3b46ca;
+}
+
+.card-title {
+	font-size: 28px;
+	font-weight: 600;
+	color: var(--black);
+	margin: 0;
+	letter-spacing: -0.03em;
+}
+
+.card-text {
+	font-size: 18px;
+	color: var(--black);
+	margin: 0;
+	font-weight: 400;
+	line-height: 1.14;
+}
+
+/* --- АДАПТИВ ПОД МОБИЛКИ --- */
+@media (max-width: 768px) {
+	.advantages-section {
+		/* Твои жесткие мобильные паддинги, но обнуляем верхний, */
+		/* так как картинка должна прилипнуть к самому верху блока */
+		padding: 0 16px 40px 16px;
+		overflow: hidden;
+	}
+
+	.advantages-grid {
+		grid-template-columns: 1fr;
+		gap: 12px; /* Чуть уменьшаем зазор между карточками на мобилке */
+	}
+
+	/* Сбрасываем десктопные сдвиги */
+	.advantage-card {
+		grid-column: auto !important;
+		grid-row: auto !important;
+		transform: none !important;
+		padding: 32px 24px; /* Компактные паддинги внутри карточки */
+	}
+
+	/* Выводим картинку в топ и растягиваем на весь экран */
+	.advantages-bg {
+		position: relative;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 135vw; /* Картинка игнорирует паддинги секции и встает в края дисплея */
+		height: 380px; /* Фиксируем высоту блока с картинкой */
+		margin-bottom: 0;
+	}
+
+	.advantages-bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* Картинка красиво заполняет область без деформации */
+		opacity: 0.7; /* На мобилке делаем сочной, как на макете */
+	}
+
+	/* Накладываем ПЕРВУЮ карточку на изображение */
+	.card-1 {
+		/* Высота картинки (380px) минус необходимый отступ сверху (242px) */
+		/* Получаем -138px. На эту высоту карточка заедет наверх на картинку */
+		margin-top: -138px;
+		position: relative;
+		z-index: 5;
+	}
+
+	/* Корректируем шрифты под мобильный макет */
+	.card-title {
+		font-size: 24px;
+	}
+
+	.card-text {
+		font-size: 15px;
+		line-height: 1.3;
+	}
+}

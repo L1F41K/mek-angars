@@ -1,0 +1,81 @@
+/* Секция Hero */
+.hero-page {
+	margin-top: 128px;
+	padding: 80px; /* Твои оригинальные паддинги без ограничений ширины */
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+	margin-bottom: 24px;
+}
+
+.breadcrumbs__list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-size: 18px;
+	line-height: 1.3;
+}
+
+.breadcrumbs__item {
+	color: var(--blue);
+	display: flex;
+	align-items: center;
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+	content: '';
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin: 0 12px;
+	background-color: var(--blue);
+	vertical-align: middle;
+	flex-shrink: 0;
+}
+
+.breadcrumbs__link {
+	color: rgba(128, 128, 128, 1);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.breadcrumbs__link:hover {
+	color: var(--blue);
+}
+
+/* Заголовок H1 */
+.hero-page__title {
+	color: var(--black);
+	margin: 0 0 40px 0;
+	line-height: 1.15;
+}
+
+/* Обертка для картинки, чтобы контролировать пропорции */
+.hero-page__image-wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+.hero-page__img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+}
+
+/* --- Адаптивность для мобильных устройств --- */
+@media (max-width: 768px) {
+	.hero-page {
+		margin-top: 165px;
+		padding: 40px 16px; /* Твои оригинальные мобильные паддинги */
+	}
+
+	.hero-page__title {
+		font-size: 28px;
+		margin-bottom: 24px;
+	}
+}

@@ -77,6 +77,7 @@
 		background-color 0.4s ease;
 	cursor: pointer;
 	z-index: 1;
+	text-decoration: none;
 }
 
 .hangar-card__title {
@@ -136,7 +137,9 @@
 	display: flex;
 	justify-content: flex-end;
 }
-
+.hangar-card-blue {
+	background: linear-gradient(110.61deg, #e8f0ff 0%, #fafafa 69.51%);
+}
 .hangar-card__icon svg {
 	transition:
 		transform 0.4s ease,

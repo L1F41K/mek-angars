@@ -1,24 +1,34 @@
 .projects {
-	background-color: #0d1733; /* Темно-синий фон из макета */
+	background-color: #0d1733; /* Тёмно-синий фон */
 	color: var(--white);
-	min-height: 100vh;
+	height: 100vh; /* Строго фиксированная высота экрана */
+	overflow: hidden; /* Тотальный запрет на любой скролл секции */
 }
 
 .projects__container {
 	display: flex;
+	height: 100%; /* Контейнер занимает ровно 100vh */
 }
 
+/* --- ЛЕВАЯ ЧАСТЬ (Интерфейс выбора) --- */
 .projects__left {
 	width: 50%;
-	padding: 175px 80px;
+	/* Вертикальные паддинги уменьшаются на низких экранах (от 120px до 40px) */
+	padding: clamp(40px, 7vh, 120px) 80px clamp(40px, 7vh, 120px) 80px;
 	padding-right: 20px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between; /* Равномерно распределяет блоки внутри */
+	height: 100%;
+	box-sizing: border-box;
 }
 
 .projects__title {
 	font-weight: 400;
-	margin-bottom: 40px;
+	font-size: clamp(32px, 3.5vw, 48px);
+	margin-top: 0;
+	margin-bottom: clamp(20px, 4vh, 40px);
+	flex-shrink: 0; /* Заголовок никогда не сжимается */
 }
 
 .text-gray {
@@ -27,58 +37,69 @@
 }
 
 .projects__list {
-	margin-bottom: 60px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1; /* Занимает всё доступное пространство между заголовком и кнопкой */
+	justify-content: center; /* Центрирует элементы по вертикали */
+	margin-bottom: clamp(20px, 4vh, 40px);
+	overflow: hidden; /* Защита от случайного скролла */
 }
 
+/* Пункты списка */
 .project-item {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding: 20px 12px;
+	/* Паддинги сжимаются на маленьких экранах */
+	padding: clamp(10px, 1.8vh, 24px) 12px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	cursor: pointer;
-	transition: 0.3s;
-}
-
-.project-item__number {
-	color: var(--light-blue);
-	font-size: 20px;
-	font-weight: 600;
-	opacity: 0.4;
-	margin-right: 40px;
-	margin-bottom: 5px;
-}
-/* Состояние пунктов по умолчанию */
-.project-item {
-	opacity: 0.6; /* Все пункты полупрозрачные */
+	opacity: 0.6;
 	transition:
 		opacity 0.3s ease,
 		border-color 0.3s ease;
+
+	/* Разрешаем элементам пропорционально ужиматься в высоту, если экрану тесно */
+	flex-shrink: 1;
+	min-height: 0;
 }
 
-/* Активный пункт (на который навели или который выбран) */
+/* Активные состояния и ховеры */
 .project-item.active {
 	opacity: 1;
-	border-bottom-color: rgba(255, 255, 255, 0.4); /* Делаем линию чуть ярче */
+	border-bottom-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Иконка в активном пункте */
 .project-item.active .project-item__icon {
 	opacity: 1;
 }
 
-/* Номер в активном пункте тоже можно сделать ярче */
 .project-item.active .project-item__number {
 	opacity: 0.8;
 }
+
+.project-item__number {
+	color: var(--light-blue);
+	font-size: clamp(16px, 1.5vw, 20px);
+	font-weight: 600;
+	opacity: 0.4;
+	margin-right: 40px;
+	margin-bottom: 2px;
+	flex-shrink: 0;
+}
+
 .project-item__name {
-	font-size: 24px;
+	font-size: clamp(18px, 2vw, 24px); /* Шрифт уменьшается на ноутбуках */
 	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; /* Длинный текст аккуратно обрежется троеточием */
 }
 
 .project-item__icon {
 	opacity: 0.4;
 	transition: 0.3s;
+	flex-shrink: 0;
 }
 
 .project-item:hover .project-item__icon {
@@ -91,24 +112,28 @@
 	align-self: flex-start;
 	background: var(--white);
 	color: var(--blue);
-	padding: 27px;
+	padding: clamp(16px, 2vh, 24px) 27px; /* Высота кнопки тоже адаптивная */
 	border: 1px solid var(--white) !important;
-	border: none;
 	display: flex;
 	align-items: center;
 	gap: 15px;
 	font-weight: 600;
+	flex-shrink: 0; /* Кнопка защищена от сжатия */
 }
+
 .projects__btn:hover {
 	background-color: transparent;
 	color: var(--white);
 }
+
 .projects__btn:hover svg path {
 	stroke: var(--white);
 }
-/* ПРАВАЯ ЧАСТЬ */
+
+/* --- ПРАВАЯ ЧАСТЬ (Демонстрация проекта) --- */
 .projects__right {
 	width: 55%;
+	height: 100%;
 	position: relative;
 	overflow: hidden;
 }
@@ -122,13 +147,13 @@
 		opacity 0.4s ease-in-out,
 		visibility 0.4s;
 	z-index: 1;
-	padding: 48px 40px;
+	padding: clamp(40px, 6vh, 80px) 40px; /* Паддинги подстраиваются под высоту */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	box-sizing: border-box;
 }
 
-/* Показываем первый экран по умолчанию или при классе active */
 .project-view.active {
 	opacity: 1;
 	visibility: visible;
@@ -201,23 +226,28 @@
 	font-size: 20px;
 	font-weight: 400;
 }
-/* --- МЕДИА-ЗАПРОС ДЛЯ РЕАЛИЗОВАННЫХ ПРОЕКТОВ (990px и меньше) --- */
+
+/* ==========================================================================
+   АДАПТИВНАЯ МОБИЛЬНАЯ ВЕРСИЯ (Твой оригинальный код)
+   ========================================================================== */
+
 @media (max-width: 990px) {
 	.projects {
+		height: auto; /* Снимаем ограничение по высоте экрана */
 		min-height: auto;
-		padding: 48px 0 0 0; /* Отступы сверху, снизу блок закроет картинка */
+		padding: 48px 0 0 0;
 	}
 
-	/* Разворачиваем две колонки в один вертикальный ряд */
 	.projects__container {
 		flex-direction: column;
+		height: auto;
 	}
 
-	/* ЛЕВАЯ ЧАСТЬ (Заголовок и список) */
+	/* ЛЕВАЯ ЧАСТЬ */
 	.projects__left {
-		width: 100% !important; /* Гарантируем полную ширину */
-		padding: 0 16px 32px 16px !important; /* Сбрасываем десктопные 80px и 20px */
-		box-sizing: border-box;
+		width: 100% !important;
+		padding: 0 16px 32px 16px !important;
+		height: auto;
 	}
 
 	.projects__title {
@@ -228,6 +258,7 @@
 
 	.projects__list {
 		margin-bottom: 32px;
+		overflow: visible;
 	}
 
 	.project-item {
@@ -235,10 +266,10 @@
 		max-width: 100%;
 		display: flex;
 		justify-content: space-between;
-		align-items: center; /* Выравниваем по центру, чтобы при переносе строки иконка не улетала */
+		align-items: center;
 		padding: 16px 8px !important;
 		box-sizing: border-box;
-		gap: 12px; /* Создаем аккуратный зазор между номером, текстом и стрелкой */
+		gap: 12px;
 		opacity: 0.6;
 		transition:
 			opacity 0.3s ease,
@@ -247,38 +278,38 @@
 
 	.project-item__number {
 		font-size: 16px;
-		margin-right: 0; /* Обнуляем десктопный маргин 40px, который сжимал текст */
-		flex-shrink: 0; /* Цифра не будет сплющиваться */
+		margin-right: 0;
+		flex-shrink: 0;
 	}
 
 	.project-item__name {
 		font-size: 16px;
 		line-height: 1.4;
-		flex-grow: 1; /* Занимает всё свободное пространство */
-		white-space: normal; /* Разрешаем перенос длинного текста на новую строку */
+		flex-grow: 1;
+		white-space: normal;
 		word-wrap: break-word;
 	}
 
 	.project-item__icon {
-		flex-shrink: 0; /* Иконка-стрелка защищена от сжатия */
+		flex-shrink: 0;
 		display: flex;
 		align-items: center;
 	}
 
-	/* ТРАНСФОРМАЦИЯ КНОПКИ «Смотреть все кейсы» */
+	/* КНОПКА */
 	.projects__btn {
-		align-self: stretch; /* Растягиваем кнопку на всю ширину */
+		align-self: stretch;
 		width: 100%;
-		justify-content: center; /* Центрируем текст внутри */
+		justify-content: center;
 		padding: 18px 24px;
 		box-sizing: border-box;
 		font-size: 16px;
 	}
 
-	/* ПРАВАЯ ЧАСТЬ (Изображение с характеристиками) */
+	/* ПРАВАЯ ЧАСТЬ */
 	.projects__right {
 		width: 100%;
-		height: 500px; /* Фиксированная высота для мобильного экрана карточки */
+		height: 500px;
 		position: relative;
 	}
 
@@ -288,8 +319,8 @@
 	}
 
 	.project-view__number {
-		font-size: 64px; /* Фиксированный крупный номер */
-		margin-bottom: auto; /* Выталкивает нижний текстовый блок вниз */
+		font-size: 64px;
+		margin-bottom: auto;
 	}
 
 	.project-view__city {
@@ -313,10 +344,10 @@
 		margin: 16px 0;
 	}
 
-	/* Характеристики (Площадь, Срок, Особенность) */
+	/* Характеристики */
 	.project-view__info {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr); /* Выстраиваем 3 колонки в ряд */
+		grid-template-columns: repeat(3, 1fr);
 		gap: 12px;
 	}
 
@@ -334,12 +365,11 @@
 }
 
 @media (max-width: 480px) {
-	/* На совсем узких экранах перестраиваем характеристики в вертикальный стек */
 	.project-view__info {
 		gap: 8px;
 	}
 
 	.projects__right {
-		height: 600px; /* Увеличиваем высоту под вертикальные инфо-блоки */
+		height: 600px;
 	}
 }

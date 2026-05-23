@@ -25,11 +25,22 @@
 	display: flex;
 	flex-direction: column;
 }
-
+.var2 {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.var2 .header__phone {
+	color: var(--blue);
+}
+.var2 .header__schedule {
+	color: var(--black);
+}
+.var2 .burger__line {
+	background: var(--black);
+}
 .header__phone {
 	text-decoration: none;
 	color: var(--white);
-	font-weight: 600;
+	font-weight: 500;
 	font-size: clamp(
 		16px,
 		1.5vw,
@@ -381,6 +392,9 @@
 		width: 100%;
 		justify-content: flex-end;
 	}
+	.var2 {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	}
 }
 
 @media (max-width: 420px) {
@@ -396,5 +410,8 @@
 	}
 	.header__schedule {
 		font-size: 13px;
+	}
+	.var2 {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	}
 }

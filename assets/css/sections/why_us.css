@@ -84,12 +84,12 @@
 	overflow: hidden;
 }
 
-.swiper {
+.advantages__slider .swiper {
 	width: 100%;
 	height: 100%;
 }
 
-.swiper-slide {
+.advantages__slider .swiper-slide {
 	width: 100%;
 	max-width: 100%;
 	height: 100%;

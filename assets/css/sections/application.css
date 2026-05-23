@@ -1,0 +1,257 @@
+/* --- СЕКЦИЯ АНГАРОВ (ОБЩАЯ СЕТКА) --- */
+.hangars-section {
+	padding: 80px;
+	padding-bottom: 0;
+	overflow: hidden; /* Прячет уходящую вправо часть карусели */
+}
+
+.hangars-top {
+	display: flex;
+	gap: 140px;
+	margin-bottom: 60px;
+}
+
+.hangars-info {
+	max-width: 770px;
+	width: 100%;
+}
+
+.hangars-subtitle {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: -0.03em;
+	color: var(--black);
+	margin-bottom: 24px;
+	font-weight: 400;
+}
+
+.hangars-subtitle::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-color: var(--blue);
+}
+
+.hangars-title {
+	color: var(--black);
+	font-size: 40px;
+	margin: 0 0 20px 0;
+}
+
+.hangars-description {
+	font-size: 18px;
+	color: rgba(21, 21, 21, 0.75);
+	line-height: 1.5;
+	margin: 0;
+}
+
+.hangars-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.hangars-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 20px 0;
+	border-bottom: 1px solid #e0e0e0;
+	position: relative; /* Для позиционирования стрелки на мобилках если потребуется */
+}
+
+.hangars-item:first-child {
+	padding-top: 0;
+}
+
+.hangars-num {
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--blue);
+	min-width: 25px;
+}
+
+.hangars-text {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.14;
+	margin: 0;
+	color: var(--black);
+}
+
+/* --- ОБОЛОЧКА И ЛЕНТА КАРУСЕЛИ --- */
+.hangars-slider-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.custom-slider {
+	width: 100%;
+	overflow: visible;
+	cursor: grab;
+	user-select: none;
+}
+
+.custom-slider.grabbing {
+	cursor: grabbing;
+}
+
+/* Лента слайдов с зазором в 5px */
+.custom-track {
+	display: flex;
+	gap: 5px;
+	transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+	will-change: transform;
+}
+
+/* Расчет ширины: 3 полных слайда в ряд + хвостик 4-го (0.25) с учетом gap 5px */
+.custom-slide {
+	flex-shrink: 0;
+	width: calc((100% - (5px * 3)) / 3.25);
+	opacity: 1 !important;
+	box-sizing: border-box;
+}
+
+/* Новые изолированные стили карточки */
+.hangar-card2 {
+	width: 100%;
+	overflow: hidden;
+}
+
+.hangar-card2 img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 584 / 371;
+	object-fit: cover;
+	display: block;
+	pointer-events: none;
+}
+
+/* --- КНОПКИ НАВИГАЦИИ --- */
+.hangars-navigation {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+	margin-top: 40px;
+}
+
+.hangars-navigation button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	background-color: #1a52bf !important;
+	color: #ffffff !important;
+	border: none;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.hangars-navigation button:hover:not(:disabled) {
+	opacity: 0.85;
+}
+
+.hangars-navigation button:disabled,
+.hangars-navigation button[disabled] {
+	background-color: #1a52bf !important;
+	color: #ffffff !important;
+	cursor: default !important;
+	opacity: 1 !important;
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 1100px) {
+	.custom-slide {
+		width: calc((100% - (5px * 2)) / 2.3); /* Планшеты: 2 слайда + хвост */
+	}
+}
+
+@media (max-width: 1024px) {
+	.hangars-top {
+		flex-direction: column;
+		gap: 30px;
+		margin-bottom: 40px;
+	}
+	.hangars-info,
+	.hangars-list {
+		max-width: 100%;
+	}
+}
+
+/* Стилизация под мобильное изображение */
+@media (max-width: 768px) {
+	.hangars-section {
+		padding: 40px 0; /* Ориентируемся на твои мобильные паддинги */
+	}
+	.hangars-top {
+		padding: 0 16px;
+	}
+	.hangars-subtitle {
+		font-size: 14px;
+		margin-bottom: 16px;
+	}
+
+	.hangars-title {
+		font-size: 28px;
+		line-height: 1.2;
+		margin-bottom: 16px;
+	}
+
+	.hangars-description {
+		font-size: 15px;
+		line-height: 1.4;
+	}
+
+	/* Перестраиваем элементы списка: номер и текст в строку + стрелка в углу дисплея */
+	.hangars-item {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 10px;
+		padding: 24px 40px 20px 0; /* Оставляем 40px справа под стрелку */
+	}
+
+	.hangars-num {
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	.hangars-text {
+		font-size: 16px;
+		line-height: 1.3;
+	}
+
+	/* Динамическое добавление стрелочки через background-image */
+	.hangars-item::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 24px;
+		height: 24px;
+		/* Твой SVG код переведенный в URL-безопасный формат */
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.68286 19.317L18.7316 4.68286M4.68286 4.68286H18.7316V19.317' stroke='%231F4CAE' stroke-width='2.57143'/%3E%3C/svg%3E");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (max-width: 600px) {
+	.custom-slider {
+		overflow: hidden; /* На смартфонах прячем вылеты карусели */
+	}
+	.custom-slide {
+		width: calc(100% - 40px); /* 1 слайд почти во всю ширину экрана */
+	}
+	.hangars-navigation {
+		justify-content: end; /* Центрируем синие кнопки навигации */
+	}
+}

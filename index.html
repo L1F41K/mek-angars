@@ -18,9 +18,9 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="header__logo">
+			<a href="index.html" class="header__logo">
 				<img src="assets/svg/logo.svg" alt="МЭК Логотип" />
-			</div>
+			</a>
 
 			<div class="header__content">
 				<div class="header__info">
@@ -261,7 +261,10 @@
 
 				<div class="hangars__grid">
 					<!-- Карточка 1 (пропускаем первую ячейку и встаем во вторую) -->
-					<div class="hangar-card hangar-card--first hangar-card-blue">
+					<a
+						href="hangars.html"
+						class="hangar-card hangar-card--first hangar-card-blue"
+					>
 						<div
 							class="hangar-card__bg"
 							style="background-image: url('assets/img/var1.jpg')"
@@ -286,10 +289,10 @@
 								/>
 							</svg>
 						</div>
-					</div>
+					</a>
 
 					<!-- Карточка 2 -->
-					<div class="hangar-card">
+					<a href="hangars.html" class="hangar-card">
 						<div
 							class="hangar-card__bg"
 							style="background-image: url('assets/img/var2.jpg')"
@@ -312,10 +315,10 @@
 								/>
 							</svg>
 						</div>
-					</div>
+					</a>
 
 					<!-- Карточка 3 (перейдет на вторую строку сама) -->
-					<div class="hangar-card hangar-card-blue">
+					<a href="hangars.html" class="hangar-card hangar-card-blue">
 						<div
 							class="hangar-card__bg"
 							style="background-image: url('assets/img/var3.jpg')"
@@ -338,10 +341,10 @@
 								/>
 							</svg>
 						</div>
-					</div>
+					</a>
 
 					<!-- Карточка 4 -->
-					<div class="hangar-card">
+					<a href="hangars.html" class="hangar-card">
 						<div
 							class="hangar-card__bg"
 							style="background-image: url('assets/img/var4.jpg')"
@@ -364,7 +367,7 @@
 								/>
 							</svg>
 						</div>
-					</div>
+					</a>
 
 					<!-- Ячейка 6 с кнопкой -->
 					<div class="hangar-card hangar-card--button">
@@ -629,36 +632,25 @@
 
 					<div class="about-stats__grid">
 						<div class="about-stats__card">
-							<div class="about-stats__inner">
-								<span class="about-stats__number">500+</span>
-								<p class="about-stats__text">реализованных <br />проектов</p>
-							</div>
+							<span class="about-stats__number">500+</span>
+							<p class="about-stats__text">реализованных <br />проектов</p>
 						</div>
 
 						<div class="about-stats__card">
-							<div class="about-stats__inner">
-								<span class="about-stats__number">100+</span>
-								<p class="about-stats__text">постоянных клиентов</p>
-							</div>
+							<span class="about-stats__number">100+</span>
+							<p class="about-stats__text">постоянных <br />клиентов</p>
 						</div>
 
 						<div class="about-stats__card">
-							<div class="about-stats__inner">
-								<span class="about-stats__number">20</span>
-								<p class="about-stats__text">
-									специалистов <br />
-									в штате
-								</p>
-							</div>
+							<span class="about-stats__number">20</span>
+							<p class="about-stats__text">специалистов <br />в штате</p>
 						</div>
 
 						<div class="about-stats__card">
-							<div class="about-stats__inner">
-								<span class="about-stats__number">5 тыс. м²</span>
-								<p class="about-stats__text">
-									площадь собственного производства
-								</p>
-							</div>
+							<span class="about-stats__number">5 тыс. м²</span>
+							<p class="about-stats__text">
+								площадь собственного <br />производства
+							</p>
 						</div>
 					</div>
 				</div>
@@ -833,9 +825,14 @@
 
 					<div class="project-start__grid">
 						<div class="project-start__left">
-							<h3 class="project-start__subtitle">Оставьте заявку, и мы:</h3>
-
 							<div class="project-steps">
+								<div class="project-steps__title-cell">
+									<h3 class="project-start__subtitle">
+										Оставьте заявку, и мы:
+									</h3>
+								</div>
+								<div class="project-steps__empty-top"></div>
+
 								<div class="project-steps__item">
 									<span class="project-steps__number">01</span>
 									<p class="project-steps__text">
@@ -854,6 +851,10 @@
 										Пришлем коммерческое предложение за 15 минут
 									</p>
 								</div>
+
+								<div class="project-steps__empty-bottom"></div>
+								<div class="project-steps__empty-bottom"></div>
+								<div class="project-steps__empty-bottom"></div>
 							</div>
 						</div>
 
